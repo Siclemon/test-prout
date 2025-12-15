@@ -20,7 +20,7 @@ public class firework {
         xMin = yMin*2;
         xMax = -xMin;
 
-
+        while(true){
         for (int i=yMin; i<hauteur*4/5; i++) {
 
             try {
@@ -81,8 +81,9 @@ public class firework {
                 System.out.println();
             }
             //System.out.println(i); //pour voir l'avancée
-        }   
-        scan.close();
+        }
+        scan.close();}   
+        
 
     }
 }
