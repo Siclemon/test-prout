@@ -35,7 +35,7 @@ public class firework {
                 for (int x = xMin; x<=xMax; x++){
                     distance = Math.sqrt(x*x/4+y*y);
                     rand = rng.nextInt(1,11);
-
+                    
                     //contour
                     if (Math.abs(x)==xMax || Math.abs(y)==yMax) carac = "@";
                     else carac = " ";

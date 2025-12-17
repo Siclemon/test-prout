@@ -55,13 +55,13 @@ public class CompteurPause {
 
         //quelles sont les pauses du jour
         jourr =jour.getDisplayName(TextStyle.FULL, Locale.forLanguageTag("fr-FR"));
-        if (jourr=="lundi" || jourr=="mardi") pauses[0] = "10:30:00";
+        if (jourr.matches("lundi|mardi")) pauses[0] = "10:30:00";
+        if (jourr.matches("lundi|mercredi")) pauses[3] = "16:00:00";
 
         //quelle est la prochaine pause
         for (i=0; !mtn.isBefore(LocalTime.parse(pauses[i])); i++);
         pause = LocalTime.parse(pauses[i]);
 
-        
   
         while (true){
 
@@ -95,7 +95,7 @@ public class CompteurPause {
                         tableau[y][x]=" ";
                         if (x==0 || x==155 || y==0 || y==26) tableau[y][x] = "X";
 
-                        if (!isPause && !debug) {
+                        if (!isPause) {
                             for (indiceChiffre=0; indiceChiffre<=5; indiceChiffre++) {
                                 if (y>7 && y<19 && x>xPosChiffre[indiceChiffre] && x<xPosChiffre[indiceChiffre]+15)
                                     tableau[y][x] = chiffres.get(stringTemps.charAt(indiceChiffre))[y-8][x-xPosChiffre[indiceChiffre]];
