@@ -2,15 +2,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-import intro.boole;
+//import intro.boole;
 
 public class CadeauxTests {
     public static void main(String[] args) {
         Random rng = new Random();
         int rand;
-        String[][][] cadeaux = {{{" ","_","_","O","_","_"," "},{"|"," "," ","|"," "," ","|"},{"|","=","=","|","=","=","|"},{"|","_","_","|","_","_","|"}},{{"!"}}};
-        String[][][] codesCouleurs = {{{"","1","1","2","1","1",""},{"1","","","2","","","1"},{"1","2","2","2","2","2","1"},{"1","1","1","2","1","1","1"}}};
-        int[] nbCouleurs = {2,1};
+        String[][][] cadeaux = {{{" ","_","_","O","_","_"," "},{"|"," "," ","|"," "," ","|"},{"|","=","=","|","=","=","|"},{"|","_","_","|","_","_","|"}},{{" ","_","_","_","_","_","_","_","o","O","_","_","_","_","_","_","_"},{"|"," "," "," "," "," "," "," ","|","|"," "," "," "," "," "," "," ","|"},{"|","~","~","~","~","~","~","~","|","|","~","~","~","~","~","~","~","|"},{"|","_","_","_","_","_","_","_","|","|","_","_","_","_","_","_","_","|"}}};
+        String[][][] codesCouleurs = {{{"0","1","1","2","1","1","0"},{"1","0","0","2","0","0","1"},{"1","2","2","2","2","2","1"},{"1","1","1","2","1","1","1"}},{{"0","1","1","1","1","1","1","1","2","2","1","1","1","1","1","1","1"},{"1","0","0","0","0","0","0","0","2","2","0","0","0","0","0","0","0","1"},{"1","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","1"},{"1","1","1","1","1","1","1","1","2","2","1","1","1","1","1","1","1","1"}}};
+        int[] nbCouleurs = {2,2};
         ArrayList<String> couleurs = new ArrayList<String>();
         String[] listeCouleurs = {"rouge","jaune","noir","blanc","bleu","cyan","violet","vert"};
         String caca;
@@ -38,7 +38,8 @@ public class CadeauxTests {
         for (int i=0; i<cadeaux.length;i++){
 
             couleurs.clear();
-            while (couleurs.size()<nbCouleurs[i]) {
+            couleurs.add("");
+            while (couleurs.size()<nbCouleurs[i]+1) {
                 caca = listeCouleurs[rng.nextInt(listeCouleurs.length)];
                 dejaLa = false;
                 for (int z=0; z<couleurs.size(); z++){
@@ -49,17 +50,14 @@ public class CadeauxTests {
 
             for (String a :couleurs) System.out.println(a);
 
-            // while (indexCouleurs.size()<nbCouleurs[i]) {
-            //     pipi = rng.nextInt(listeCouleurs.length);
-            //     dejaLa = false;
-            //     for (int z=0; z<indexCouleurs.size(); z++){
-            //         if (pipi==indexCouleurs.get(z)) dejaLa = true;
-            //     }
-            //     if (!dejaLa) indexCouleurs.add(pipi);
-            // }
 
+            for (int j=0; j<codesCouleurs[i].length;j++){
+                for (int k=0; k<codesCouleurs[i][j].length; k++){
+                    codesCouleurs[i][j][k] = couleurs.get(Integer.parseInt(codesCouleurs[i][j][k]));
 
-
+                }
+            }
+            
 
             for (int j=0; j<cadeaux[i].length;j++){
                 for (int k=0; k<cadeaux[i][j].length; k++){
