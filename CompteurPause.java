@@ -37,7 +37,6 @@ public class CompteurPause {
         int[] xPosChiffre = {15,32,62,79,109,126};
         int[] xPosPoints = {51,99};
         int i;
-        boolean debug=false;
         boolean isPause = false;
 
         HashMap<Character, String[][]> chiffres = new HashMap<>();
@@ -57,6 +56,7 @@ public class CompteurPause {
         jourr =jour.getDisplayName(TextStyle.FULL, Locale.forLanguageTag("fr-FR"));
         if (jourr.matches("lundi|mardi")) pauses[0] = "10:30:00";
         if (jourr.matches("lundi|mercredi")) pauses[3] = "16:00:00";
+        if (jourr.equals("vendredi")) pauses[1] = "12:00:00";
 
         //quelle est la prochaine pause
         for (i=0; !mtn.isBefore(LocalTime.parse(pauses[i])); i++);

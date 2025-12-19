@@ -3,10 +3,20 @@ import java.util.Scanner;
 public class encodageCouleurCadeau {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String[][] input = {{" ","_","_","_","_","_","_","_","o","O","_","_","_","_","_","_","_"},{"|"," "," "," "," "," "," "," ","|","|"," "," "," "," "," "," "," ","|"},{"|","~","~","~","~","~","~","~","|","|","~","~","~","~","~","~","~","|"},{"|","_","_","_","_","_","_","_","|","|","_","_","_","_","_","_","_","|"}};
-        String[][] resultat = new String[input.length][input[2].length];
+        String[][] input = {{" "," "," ","_","c","O","_"," "," "},{" "," ","|","_","_","_","_","|"," "},{"_","_","|","_","_","_","_","|","_"},{"|"," "," "," ","|"," "," "," ","|"},{"|"," "," "," ","|"," "," "," ","|"},{"|","_","_","_","|","_","_","_","|"}};
+        String[][] resultat;
         String string = "";
+        int largeur=0;
 
+        //quelle est la largeur max du cadeau ?
+        for (int i=0; i<input.length;i++) {
+            if (input[i].length > largeur) largeur = input[i].length;
+        }
+
+        resultat = new String[input.length][largeur];
+
+        
+        //remplissage temporaire du tableau à remplir
         for (int i=0; i<resultat.length;i++) {
             for (int j=0; j<resultat[i].length;j++){
                 resultat[i][j] = ".";
@@ -38,17 +48,21 @@ public class encodageCouleurCadeau {
                     System.out.println();
                 }
 
-                resultat[i][j] = sc.next();
+                resultat[i][j] = String.valueOf(sc.next().charAt(0));
 
             }
 
         }
 
 
+
+
+        //afichage en liste
         for (int i=0; i<resultat.length;i++) {
             string = string + "{";
             for (int j=0; j<resultat[i].length;j++){
-                string = string + "\""+resultat[i][j]+"\",";
+                if (!resultat[i][j].equals(".")) //retirer les points
+                    string = string + "\""+resultat[i][j]+"\",";
             }
             string = string.substring(0,string.length()-1);
             string = string + "},";
@@ -57,13 +71,7 @@ public class encodageCouleurCadeau {
 
         System.out.println(string);
         
-        
-
-
-
-
-
-
+        sc.close();
 
     }
 }
