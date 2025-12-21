@@ -15,7 +15,6 @@ public class CadeauxTests {
         String[] listeCouleurs = {"rouge","jaune","blanc","bleu","cyan","violet","vert"};
         String caca;
         ArrayList<Integer> indexCouleurs = new ArrayList<Integer>();
-        int pipi;
         boolean dejaLa;
 
 
@@ -30,7 +29,6 @@ public class CadeauxTests {
             idCouleurs.put("cyan", "\033[1;96m");
             idCouleurs.put("blanc", "\033[1;97m");
             idCouleurs.put("","");
-
 
 
 
