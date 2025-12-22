@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 import java.util.ArrayList;
 
 
@@ -33,38 +33,47 @@ public class test {
 
     // }
 
-    ArrayList<Integer> abc = new ArrayList<>();
+    // ArrayList<Integer> abc = new ArrayList<>();
 
-    abc.add(3);
-    abc.add(9);
+    // abc.add(3);
+    // abc.add(9);
 
-    abc.remove(1);
-    System.out.println(abc);
+    // abc.remove(1);
+    // System.out.println(abc);
 
 
-    String[][] bibibi = {{"1","2"},{"a","b"}};
-    String[][] bobo = {{"uuu"},{"a","a","a","a","a","a"}};
-    String[][][] boi = {bibibi,bobo};
+    // String[][] bibibi = {{"1","2"},{"a","b"}};
+    // String[][] bobo = {{"uuu"},{"a","a","a","a","a","a"}};
+    // String[][][] boi = {bibibi,bobo};
 
-    ArrayList<String[][]> bababa = new ArrayList<>();
+    // ArrayList<String[][]> bababa = new ArrayList<>();
 
-    bababa.add(boi[0]);
-    bababa.add(boi[1]);
+    // bababa.add(boi[0]);
+    // bababa.add(boi[1]);
 
-    for (int h=0; h<bababa.size();h++){
-        for(String[] ligne : bababa.get(h))
-        {
-            for (String oui : ligne){
-                System.out.print(oui);
+    // for (int h=0; h<bababa.size();h++){
+    //     for(String[] ligne : bababa.get(h))
+    //     {
+    //         for (String oui : ligne){
+    //             System.out.print(oui);
 
-            }
-            System.out.println();
+    //         }
+    //         System.out.println();
 
-        }
-    System.out.println();
-    }
+    //     }
+    // System.out.println();
+    // }
+
+
+    int a;
+    Scanner sc = new Scanner(System.in);
+
+    a = sc.nextInt();
+
+    for (int i =a; i!=0+(-a/Math.abs(a)); i=i+(-a/Math.abs(a))) System.out.println(i);
+
     
-
+    sc.close();
     }
 
 }

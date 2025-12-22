@@ -35,6 +35,8 @@ public class CadeauxTests {
 
         for (int i=0; i<cadeaux.length;i++){
 
+
+            //sélection des couleurs pour chaque cadeau
             couleurs.clear();
             couleurs.add("");
             while (couleurs.size()<nbCouleurs[i]+1) {
@@ -51,8 +53,7 @@ public class CadeauxTests {
 
             for (int j=0; j<codesCouleurs[i].length;j++){
                 for (int k=0; k<codesCouleurs[i][j].length; k++){
-                    codesCouleurs[i][j][k] = couleurs.get(Integer.parseInt(codesCouleurs[i][j][k]));
-
+                    codesCouleurs[i][j][k] = couleurs.get(Integer.parseInt(codesCouleurs[i][j][k])); //remplace l'encodage par les vrais codes couleurs
                 }
             }
             
@@ -60,7 +61,6 @@ public class CadeauxTests {
             for (int j=0; j<cadeaux[i].length;j++){
                 for (int k=0; k<cadeaux[i][j].length; k++){
                 System.out.print(idCouleurs.get(codesCouleurs[i][j][k])+cadeaux[i][j][k]+"\033[0m");
-
                 }
                 System.out.println();
             }

@@ -58,6 +58,9 @@ public class CompteurPause {
         if (jourr.matches("lundi|mercredi")) pauses[3] = "16:00:00";
         if (jourr.equals("vendredi")) pauses[1] = "12:00:00";
 
+        //custom
+        //pauses[0] = "09:00:00";
+
         //quelle est la prochaine pause
         for (i=0; !mtn.isBefore(LocalTime.parse(pauses[i])); i++);
         pause = LocalTime.parse(pauses[i]);
