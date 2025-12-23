@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class encodageCouleurCadeau {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String[][] input = {{" "," "," ","_","c","O","_"," "," "},{" "," ","|","_","_","_","_","|"," "},{"_","_","|","_","_","_","_","|","_"},{"|"," "," "," ","|"," "," "," ","|"},{"|"," "," "," ","|"," "," "," ","|"},{"|","_","_","_","|","_","_","_","|"}};
+        String[][] input = {{" ","_","_","_","_","_","_","_","_","_","_"," "},{"|"," "," ","/"," "," "," ","/"," "," "," ","|"},{"|"," ","/"," "," "," ","/"," "," "," ","/","|"},{"|","/","_","_","_","/","_","_","_","/","_","|"}};
         String[][] resultat;
         String string = "";
         int largeur=0;
@@ -58,6 +58,7 @@ public class encodageCouleurCadeau {
 
 
         //afichage en liste
+        string = string + "{";
         for (int i=0; i<resultat.length;i++) {
             string = string + "{";
             for (int j=0; j<resultat[i].length;j++){
@@ -68,6 +69,7 @@ public class encodageCouleurCadeau {
             string = string + "},";
         }
         string = string.substring(0,string.length()-1);
+        string = string + "}";
 
         System.out.println(string);
         

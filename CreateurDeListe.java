@@ -17,6 +17,7 @@ public class CreateurDeListe {
 
         for (int i=0; i<string.length(); i++) {
             if (string.charAt(i) == '"') resultat += "\"\\"+string.charAt(i)+"\",";
+            if (string.charAt(i) == '\\') resultat += "\"\\"+string.charAt(i)+"\",";
             else resultat += "\""+string.charAt(i)+"\",";
 
         }

@@ -11,9 +11,9 @@ public class CadeauxTests {
         String[][][] cadeaux = {{{" ","_","_","O","_","_"," "},{"|"," "," ","|"," "," ","|"},{"|","=","=","|","=","=","|"},{"|","_","_","|","_","_","|"}},{{" ","_","_","_","_","_","_","_","o","O","_","_","_","_","_","_","_"},{"|"," "," "," "," "," "," "," ","|","|"," "," "," "," "," "," "," ","|"},{"|","~","~","~","~","~","~","~","|","|","~","~","~","~","~","~","~","|"},{"|","_","_","_","_","_","_","_","|","|","_","_","_","_","_","_","_","|"}},{{" "," "," ","_","c","O","_"," "," "},{" "," ","|","_","_","_","_","|"," "},{"_","_","|","_","_","_","_","|","_"},{"|"," "," "," ","|"," "," "," ","|"},{"|"," "," "," ","|"," "," "," ","|"},{"|","_","_","_","|","_","_","_","|"}}};
         String[][][] codesCouleurs = {{{"0","1","1","2","1","1","0"},{"1","0","0","2","0","0","1"},{"1","2","2","2","2","2","1"},{"1","1","1","2","1","1","1"}},{{"0","1","1","1","1","1","1","1","2","2","1","1","1","1","1","1","1"},{"1","0","0","0","0","0","0","0","2","2","0","0","0","0","0","0","0","1"},{"1","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","1"},{"1","1","1","1","1","1","1","1","2","2","1","1","1","1","1","1","1","1"}},{{"0","0","0","1","3","3","1","0","0"},{"0","0","1","3","3","3","3","1","0"},{"2","2","1","2","2","2","2","1","2"},{"2","0","0","0","3","0","0","0","2"},{"2","0","0","0","3","0","0","0","2"},{"2","2","2","2","3","2","2","2","2"}}};
         int[] nbCouleurs = {2,2,3};
-        ArrayList<String> couleurs = new ArrayList<String>();
+        ArrayList<String> couleursDuCadeau = new ArrayList<String>();
         String[] listeCouleurs = {"rouge","jaune","blanc","bleu","cyan","violet","vert"};
-        String caca;
+        String tempClr;
         ArrayList<Integer> indexCouleurs = new ArrayList<Integer>();
         boolean dejaLa;
 
@@ -37,27 +37,28 @@ public class CadeauxTests {
 
 
             //sélection des couleurs pour chaque cadeau
-            couleurs.clear();
-            couleurs.add("");
-            while (couleurs.size()<nbCouleurs[i]+1) {
-                caca = listeCouleurs[rng.nextInt(listeCouleurs.length)];
+            couleursDuCadeau.clear();
+            couleursDuCadeau.add("");
+            while (couleursDuCadeau.size()<nbCouleurs[i]+1) {
+                tempClr = listeCouleurs[rng.nextInt(listeCouleurs.length)];
                 dejaLa = false;
-                for (int z=0; z<couleurs.size(); z++){
-                    if (caca==couleurs.get(z)) dejaLa = true;
+                for (int z=0; z<couleursDuCadeau.size(); z++){
+                    if (tempClr==couleursDuCadeau.get(z)) dejaLa = true;
                 }
-                if (!dejaLa) couleurs.add(caca); 
+                if (!dejaLa) couleursDuCadeau.add(tempClr); 
             }
 
-            for (String a :couleurs) System.out.println(a);
+            for (String a :couleursDuCadeau) System.out.println(a);
 
 
             for (int j=0; j<codesCouleurs[i].length;j++){
                 for (int k=0; k<codesCouleurs[i][j].length; k++){
-                    codesCouleurs[i][j][k] = couleurs.get(Integer.parseInt(codesCouleurs[i][j][k])); //remplace l'encodage par les vrais codes couleurs
+                    codesCouleurs[i][j][k] = couleursDuCadeau.get(Integer.parseInt(codesCouleurs[i][j][k])); //remplace l'encodage par les vrais codes couleursDuCadeau
                 }
             }
             
 
+            //affichage
             for (int j=0; j<cadeaux[i].length;j++){
                 for (int k=0; k<cadeaux[i][j].length; k++){
                 System.out.print(idCouleurs.get(codesCouleurs[i][j][k])+cadeaux[i][j][k]+"\033[0m");
