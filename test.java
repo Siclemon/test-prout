@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 
 public class test {
@@ -72,7 +71,7 @@ public class test {
 
     for (int i =a; i!=0+(-a/Math.abs(a)); i=i+(-a/Math.abs(a))) System.out.println(i);
 
-    
+        
     sc.close();
     }
 
