@@ -1,8 +1,12 @@
+import java.time.Duration;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
+
+
 
 public class w {
     static String[][] tableau =  new String[10][10];
@@ -18,6 +22,8 @@ public class w {
     static ArrayList<Integer> ySerpent = new ArrayList<>();
     static Random rng = new Random();
     static int[] yxPomme = {rng.nextInt(10),rng.nextInt(10)};
+    static Thread test = new Thread(new chevreuil());
+    static int[] lastMove = {-1,0};
 
     public static void main(String[] args) {
         w sss = new w();
@@ -27,7 +33,7 @@ public class w {
         Scanner sc = new Scanner(System.in);
         char input;
         
-
+        test.start();
         
         dessins.put("", r);
         dessins.put("pomme", pomme);
@@ -50,7 +56,7 @@ public class w {
         image[yRand-1][xRand] = rouge + "\\";
         image[yRand-1][xRand-1] = rouge + "/";
 
-        tableau[rng.nextInt(10)][rng.nextInt(10)] = "pomme";
+        tableau[yxPomme[0]][yxPomme[1]] = "pomme";
 
         
         
@@ -79,29 +85,42 @@ public class w {
                     break;
             }
 
+            if (yxPomme[0]==yxTete[0] && yxPomme[1]==yxTete[1]) sss.pommeMangee();
+            else serpent.remove(serpent.size()-1);
         }
 
 
+    }
 
+    public void pommeMangee() {
+        //retire la pomme
+        tableau[yxPomme[0]][yxPomme[1]] = " ";
 
+        //cherche une case vide pour la pomme
+        while (true) { 
+            yxPomme[0] = rng.nextInt(10);
+            yxPomme[1] = rng.nextInt(10);
 
+            int count =0;
+            for (int i=0; i<serpent.size(); i++) {
+                if (!(yxPomme[0]==serpent.get(i)[0] && yxPomme[1]==serpent.get(i)[1])) count++;
+            }
+            if (count==serpent.size()) break;
+        }
 
-        
+        //affiche la nouvelle pomme
+        tableau[yxPomme[0]][yxPomme[1]] = "pomme";
     }
 
     public void deplacement(int y, int x){
+
+        lastMove[0] = y;
+        lastMove[1] = x;
 
         yxTete[0] = yxTete[0]+y;
         yxTete[1] = yxTete[1]+x;
 
         serpent.add(0,yxTete.clone()); //nouvelle position de la tete
-        if (yxPomme[0]!=yxTete[0] || yxPomme[1]!=yxTete[1]) serpent.remove(serpent.size()-1); //retire le bout du serpent
-
-        // ySerpent.add(0,ySerpent.get(0)+y);
-        // xSerpent.add(0,xSerpent.get(0)+x);
-
-        // ySerpent.removeLast();
-        // xSerpent.removeLast();
     }
 
     public void affichage(String[][] tab){
@@ -130,12 +149,16 @@ public class w {
         }
 
         System.out.println("\033\143");
-            for (String[] ligne : frame) {
-                for (String truc : ligne) {
-                    System.out.print(truc+"\033[0m");
-                }
-                System.out.println();
+        for (String[] ligne : frame) {
+             for (String truc : ligne) {
+                 System.out.print(truc+"\033[0m");
             }
+            System.out.println();
+        }
+
+        System.out.println(chevreuil.duree);
+
+        chevreuil.lastFrame = LocalTime.now();
 
         // for (int[] a : serpent){ juste pour voir les coordonnées du serpent
         //     for (int b : a){
@@ -149,3 +172,32 @@ public class w {
     
 
 }
+
+class chevreuil implements Runnable {
+    static LocalTime mtn = LocalTime.now();
+    static LocalTime lastFrame = LocalTime.now();
+    static long duree;
+    w jsp = new w();
+
+    public void run () {
+
+        while (true) { 
+            mtn = LocalTime.now();
+            duree = Duration.between(lastFrame, mtn).getSeconds()*1000+Duration.between(lastFrame, mtn).getNano()/1000000;
+
+            if (duree>=800) {
+                jsp.deplacement(w.lastMove[0], w.lastMove[1]);
+
+                if (w.yxPomme[0]==w.yxTete[0] && w.yxPomme[1]==w.yxTete[1]) jsp.pommeMangee();
+                else w.serpent.remove(w.serpent.size()-1);
+
+                jsp.affichage(w.tableau);
+                //System.out.println("a");
+            }
+            
+        }
+
+    }
+}
+
+
