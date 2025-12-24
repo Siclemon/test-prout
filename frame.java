@@ -26,7 +26,7 @@ public class frame extends JFrame {
         panel.setBackground(Color.PINK);
         //panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 
-        panelTexte.setSize(200,400);
+        panelTexte.setSize(200,100);
         panelTexte.setBackground(Color.ORANGE);
         //panelTexte.setLocation(100, 10);
 
