@@ -18,10 +18,13 @@ public class w {
     static String[][] corps = {{" "," "," "," "," "," "," "," "},{" "," ","█","\033[104m▀","\033[104m▀","█"," "," "},{" "," ","█","\033[104m▄","\033[104m▄","█"," "," "},{" "," "," "," "," "," "," "," "}};
     
     static int[] yxTete = {5,5};
+    static int yTete = 5, xTete = 5;
     static Random rng = new Random();
     static int[] yxPomme = {rng.nextInt(10),rng.nextInt(10)};
+    static int yPomme = rng.nextInt(10), xPomme = rng.nextInt(10);
     static Thread test = new Thread(new chevreuil());
     static int[] lastMove = {-1,0};
+    static int yLast = -1, xLast = 0;
 
     public static void main(String[] args) {
         w sss = new w();
@@ -29,7 +32,7 @@ public class w {
         Scanner sc = new Scanner(System.in);
         char input;
         
-        //test.start();
+        test.start();
         
         dessins.put(" ", r);
         dessins.put("pomme", pomme);
@@ -44,10 +47,10 @@ public class w {
 
         for (String[] ligne : tableau) Arrays.fill(ligne, " ");
 
-        serpent.add(0,yxTete);
+        serpent.add(0,new int[]{yTete,xTete});
 
-        tableau[yxTete[0]][yxTete[1]] = "tete";
-        tableau[yxPomme[0]][yxPomme[1]] = "pomme";
+        tableau[yTete][xTete] = "tete";
+        tableau[yPomme][xPomme] = "pomme";
 
         
         
@@ -55,13 +58,13 @@ public class w {
         while (true) {
 
             sss.affichage(tableau);
-            System.out.println(serpent.get(serpent.size()-1)[0]+" "+serpent.get(serpent.size()-1)[1]);
-            System.out.println(tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]]);
-            System.out.println(tableau[4][5]);
-            System.out.println(tableau[5][5]);
-            for (int[] elem : serpent) {
-                System.out.println(elem[0]+"-"+elem[1]);
-            }
+            // System.out.println(serpent.get(serpent.size()-1)[0]+" "+serpent.get(serpent.size()-1)[1]);
+            // System.out.println(tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]]);
+            // System.out.println(tableau[4][5]);
+            // System.out.println(tableau[5][5]);
+            // for (int[] elem : serpent) {
+            //     System.out.println(elem[0]+"-"+elem[1]);
+            // }
 
             switch (sc.next().charAt(0)) {
                 case 'z':
@@ -83,7 +86,7 @@ public class w {
                     break;
             }
 
-            if (yxPomme[0]==yxTete[0] && yxPomme[1]==yxTete[1]) sss.pommeMangee();
+            if (yPomme==yTete && xPomme==xTete) sss.pommeMangee();
             else {
                 tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]] = " ";
                 serpent.remove(serpent.size()-1);
@@ -99,18 +102,18 @@ public class w {
 
         //cherche une case vide pour la pomme
         while (true) { 
-            yxPomme[0] = rng.nextInt(10);
-            yxPomme[1] = rng.nextInt(10);
+            yPomme = rng.nextInt(10);
+            xPomme = rng.nextInt(10);
 
             int count =0;
             for (int i=0; i<serpent.size(); i++) {
-                if (!(yxPomme[0]==serpent.get(i)[0] && yxPomme[1]==serpent.get(i)[1])) count++;
+                if (!(yPomme==serpent.get(i)[0] && xPomme==serpent.get(i)[1])) count++;
             }
             if (count==serpent.size()) break;
         }
 
         //affiche la nouvelle pomme
-        tableau[yxPomme[0]][yxPomme[1]] = "pomme";
+        tableau[yPomme][xPomme] = "pomme";
     }
 
 
@@ -120,16 +123,16 @@ public class w {
         lastMove[0] = y;
         lastMove[1] = x;
 
-        yxTete[0] = yxTete[0]+y;
-        yxTete[1] = yxTete[1]+x;
+        yTete = yTete+y;
+        xTete = xTete+x;
 
-        serpent.add(0,yxTete.clone()); //nouvelle position de la tete
+        serpent.add(0,new int[] {yTete,xTete}); //nouvelle position de la tete
 
         
         for (int i=1; i<serpent.size(); i++) {
             tableau[serpent.get(i)[0]][serpent.get(i)[1]] = "corps";
         }
-        tableau[yxTete[0]][yxTete[1]] = "tete";
+        tableau[yTete][xTete] = "tete";
     }
 
     
@@ -197,10 +200,10 @@ class chevreuil implements Runnable {
             mtn = LocalTime.now();
             duree = Duration.between(lastFrame, mtn).getSeconds()*1000+Duration.between(lastFrame, mtn).getNano()/1000000;
 
-            if (duree>=800) {
+            if (duree>=750) {
                 jsp.deplacement(w.lastMove[0], w.lastMove[1]);
 
-                if (w.yxPomme[0]==w.yxTete[0] && w.yxPomme[1]==w.yxTete[1]) jsp.pommeMangee();
+                if (w.yPomme==w.yTete && w.xPomme==w.xTete) jsp.pommeMangee();
                 else {
                     w.tableau[w.serpent.get(w.serpent.size()-1)[0]][w.serpent.get(w.serpent.size()-1)[1]] = " ";
                     w.serpent.remove(w.serpent.size()-1);
