@@ -1,13 +1,15 @@
 package testsBuffer;
 
 import java.io.InputStreamReader;
+import java.io.*;
+import java.util.concurrent.*;
 
 public class jsptest {
     public static void main(String[] args) {
 
     System.out.println("START");
 
-    CancelableReader reader = new CancelableReader(new InputStreamReader(System.in));
+    CancelableReaderr reader = new CancelableReaderr(new InputStreamReader(System.in));
     String line;
 
     new Thread(() -> {
@@ -31,4 +33,37 @@ public class jsptest {
     System.exit(0);
 
 }
+}
+
+class CancelableReaderr extends BufferedReader {
+
+    private final ExecutorService executor;
+    private Future<String> future;
+
+    public CancelableReader(Reader in) {
+        super(in);
+        executor = Executors.newSingleThreadExecutor();
+    }
+
+    @Override
+    public String readLine() {
+
+        future = executor.submit(super::readLine);
+
+        try {
+            return (String) future.get();
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        } catch (CancellationException e) {
+            return null;
+        }
+
+        return null;
+
+    }
+
+    public void cancelRead() {
+        future.cancel(true);
+    }
+
 }
