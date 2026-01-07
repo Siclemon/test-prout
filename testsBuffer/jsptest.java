@@ -28,6 +28,7 @@ public class jsptest {
     }
 
     System.out.println("END");
+    System.exit(0);
 
 }
 }

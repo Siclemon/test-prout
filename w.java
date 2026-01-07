@@ -32,7 +32,7 @@ public class w {
         Scanner sc = new Scanner(System.in);
         
         test.start();
-        
+        //test.stop();
         dessins.put(" ", r);
         dessins.put("pomme", pomme);
         dessins.put("tete",tete);
@@ -73,6 +73,7 @@ public class w {
                 case 'q' :
                     sss.deplacement(0,-1);
                     break;
+                    
                 case 's':
                     sss.deplacement(1,0);
                     break;
