@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -38,10 +39,10 @@ public class ww {
 
         ExecutorService exec = Executors.newSingleThreadExecutor();
         //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        fut = exec.submit(new InputSnake());
+        //fut = exec.submit(new InputSnake());
         
-        //test.start();
-        //test.stop();
+        test.start();
+
         dessins.put(" ", r);
         dessins.put("pomme", pomme);
         dessins.put("tete",tete);
@@ -61,6 +62,7 @@ public class ww {
         tableau[yPomme][xPomme] = "pomme";
 
         Thread entree = new Thread() {
+            @Override
             public void run() {
                 do {
                     
@@ -96,13 +98,17 @@ public class ww {
                         }
 
 
-                    } catch (Exception e) {
-                        System.out.println("pas d'input");
+                    // } catch (Exception e) {
+                    //     System.out.println("pas d'input");
+                    } catch (InterruptedException ex) {
+                        System.out.println("jabadabada");
+                    } catch (ExecutionException ee) {
+                        System.out.println("ee");
                     }
 
 
                     if (yPomme==yTete && xPomme==xTete) sss.pommeMangee();
-                    else {
+                    else if (!perdu) {
                         tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]] = " ";
                         serpent.remove(serpent.size()-1);
                     }
@@ -119,6 +125,8 @@ public class ww {
                 System.out.println("oooooh");
                 //this.interrupt();
                 System.out.println("SAMER");
+                exec.shutdownNow();
+                System.out.println("cradopaud");
             }
         };
         
@@ -130,13 +138,19 @@ public class ww {
 "ddddddddddddddddddddddddddddddddddddddddddddd\n");
 
         entree.start();
+
+        try {
+            entree.join();
+        } catch (InterruptedException ex) {
+            System.out.println("erreur jsp quoi");;
+        }
+
         System.out.println("samer");
-        while (!perdu);
+        //while (perdu);
         System.out.println("lipopette");
         System.out.println("ooooo");
         fut.cancel(true);
         System.out.println("aaaa");
-
 
     }
 
@@ -170,7 +184,7 @@ public class ww {
         yTete += y;
         xTete += x;
 
-        if (xTete==-1 || xTete==10 || yTete==-1 || yTete==10) {
+        if (xTete<0 || xTete>9 || yTete<0 || yTete>9) {
             perdu = true;
             // yTete -= y; //sinon erreur
             // xTete -= x;
@@ -237,13 +251,14 @@ class chevreuil implements Runnable {
     static long duree;
     ww jsp = new ww();
 
+    @Override
     public void run () {
 
         while (!ww.perdu) { 
             mtn = LocalTime.now();
             duree = Duration.between(lastFrame, mtn).getSeconds()*1000+Duration.between(lastFrame, mtn).getNano()/1000000;
 
-            if (duree>=750-3*ww.serpent.size()) {
+            if (duree>=700-8*ww.serpent.size()) {
                 jsp.deplacement(ww.yLast, ww.xLast);
 
                 if (ww.yPomme==ww.yTete && ww.xPomme==ww.xTete) jsp.pommeMangee();
