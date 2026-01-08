@@ -35,20 +35,22 @@ public class jsptest {
 }
 }
 
-class CancelableReaderr extends BufferedReader {
+class CancelableReaderr {
 
     private final ExecutorService executor;
     private Future<String> future;
+    private BufferedReader brbr = new BufferedReader(new InputStreamReader(System.in));
 
-    public CancelableReader(Reader in) {
-        super(in);
+    public CancelableReaderr(Reader in) {
+        //super(in);
+        //this.brbr;
         executor = Executors.newSingleThreadExecutor();
     }
 
-    @Override
+    //@Override
     public String readLine() {
-
-        future = executor.submit(super::readLine);
+        
+        future = executor.submit(brbr.readLine());
 
         try {
             return (String) future.get();
