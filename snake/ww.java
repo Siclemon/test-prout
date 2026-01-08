@@ -1,14 +1,11 @@
 package snake;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
-import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -31,17 +28,16 @@ public class ww {
     static int[] lastMove = {-1,0};
     static int yLast = -1, xLast = 0;
     static boolean perdu = false;
-    static Scanner sc = new Scanner(System.in);
+
 
     static Future<String> fut;
 
     public static void main(String[] args) throws IOException {
         ww sss = new ww();
-        Scanner sc = new Scanner(System.in);
+
 
         ExecutorService exec = Executors.newSingleThreadExecutor();
         //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        char input;
         fut = exec.submit(new InputSnake());
         
         //test.start();
@@ -64,63 +60,83 @@ public class ww {
         tableau[yTete][xTete] = "tete";
         tableau[yPomme][xPomme] = "pomme";
 
-        
-        
-
-        do {
-
-
-            try {
-
-                sss.affichage(tableau);
-
-                fut = exec.submit(new InputSnake());
-                input = fut.get().charAt(0);
-
-
-                switch (input) {
-                    case 'z':
-                        sss.deplacement(-1,0);
-                        break;
-
-                    case 'q' :
-                        sss.deplacement(0,-1);
-                        break;
+        Thread entree = new Thread() {
+            public void run() {
+                do {
+                    
+                    try {
+                        char input;
                         
-                    case 's':
-                        sss.deplacement(1,0);
-                        break;
-
-                    case 'd' :
-                        sss.deplacement(0,1);
-                        break;
-                
-                    default:
-                        break;
-                }
+                        sss.affichage(tableau);
+                        System.out.println("Bonjour les amis !");
+                        
+                        fut = exec.submit(new InputSnake());
+                        input = fut.get().charAt(0);
 
 
-            } catch (Exception e) {
-                System.out.println("pas d'input");
+                        switch (input) {
+                            case 'z':
+                                sss.deplacement(-1,0);
+                                break;
+
+                            case 'q' :
+                                sss.deplacement(0,-1);
+                                break;
+                                
+                            case 's':
+                                sss.deplacement(1,0);
+                                break;
+
+                            case 'd' :
+                                sss.deplacement(0,1);
+                                break;
+                        
+                            default:
+                                break;
+                        }
+
+
+                    } catch (Exception e) {
+                        System.out.println("pas d'input");
+                    }
+
+
+                    if (yPomme==yTete && xPomme==xTete) sss.pommeMangee();
+                    else {
+                        tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]] = " ";
+                        serpent.remove(serpent.size()-1);
+                    }
+
+                    for (int i=1; i<serpent.size(); i++) {
+                        if (serpent.get(i)[0] == yTete && serpent.get(i)[1] == xTete) {
+                            perdu=true;
+                            break;
+                        }
+                    }
+                } while (!perdu);
+                System.out.println("ooooo-");
+                fut.cancel(true);
+                System.out.println("oooooh");
+                //this.interrupt();
+                System.out.println("SAMER");
             }
+        };
+        
+        System.out.println("bonjour les enfantsd\n" + //
+                        "ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\\n" + //
+"ddddddddddddddddddddddddddddddddddddddddddddd\n" + //
+"ddddddddddddddddddddddddddddddddddddddddddddd\n" + //
+"ddddddddddddddddddddddddddddddddddddddddddddd\n" + //
+"ddddddddddddddddddddddddddddddddddddddddddddd\n");
 
-
-            if (yPomme==yTete && xPomme==xTete) sss.pommeMangee();
-            else {
-                tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]] = " ";
-                serpent.remove(serpent.size()-1);
-            }
-
-            for (int[] partieDuCorps : serpent) {
-                if (partieDuCorps == new int[] {yTete,xTete}) {
-                    perdu=true;
-                    break;
-                }
-            }
-        } while (!perdu);
+        entree.start();
+        System.out.println("samer");
+        while (!perdu);
+        System.out.println("lipopette");
+        System.out.println("ooooo");
         fut.cancel(true);
         System.out.println("aaaa");
-        sc.close();
+
 
     }
 
@@ -158,7 +174,7 @@ public class ww {
             perdu = true;
             // yTete -= y; //sinon erreur
             // xTete -= x;
-            System.out.println("erreur");
+            System.out.println("sorti");
         } else {
 
             serpent.add(0,new int[] {yTete,xTete}); //nouvelle position de la tete
