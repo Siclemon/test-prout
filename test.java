@@ -1,79 +1,35 @@
+import java.util.Random;
 import java.util.Scanner;
 
 
 public class test {
     public static void main(String[] args) {
-    //     int[][][] x = {{{1,2},{4}},{{4,9,4},{8}},{{7}}};
-    //     int[][] y = {{4,9,4},{8}};
-    //     String couleur;
-    //     int indice=10;
-    //     int i=0;
-
-    //     for ( int[][] aaa : x){
-    //         i++;
-    //         if (Arrays.equals(aaa,y)) indice=i;
-    //     }
-    //     System.out.println(indice);
-        
-    
-
-    // int a,b,c;
-
-    // for (int i=0; i<300;i++) {
-    //     a = i/4;
-    //     a = a % 2 + a;
-    //     a = a/2+1;
-
-    //     b = (i/4+3)/2;
-
-    //     c = (i/4+1)/2;
-
-    //     System.out.println(c+"   "+b+"      "+(c==b-1));
-
-    // }
-
-    // ArrayList<Integer> abc = new ArrayList<>();
-
-    // abc.add(3);
-    // abc.add(9);
-
-    // abc.remove(1);
-    // System.out.println(abc);
+        String reset = "\033[0m";
+        Random rng = new Random();
+        int a,c,d;
 
 
-    // String[][] bibibi = {{"1","2"},{"a","b"}};
-    // String[][] bobo = {{"uuu"},{"a","a","a","a","a","a"}};
-    // String[][][] boi = {bibibi,bobo};
+        // System.out.println("\033[38;5;55mAAAAAAAAAAAAAA"+reset);
+        // System.out.println("\033[38;5;56mAAAAAAAAAAAAAA"+reset);
+        // System.out.println("\033[38;5;57mAAAAAAAAAAAAAA"+reset);
 
-    // ArrayList<String[][]> bababa = new ArrayList<>();
+        for (int j = 0; j < 2; j++) {
+            for (int i = 0; i < 257; i++) {
+                System.out.println("\033["+(38+j*10)+";5;"+i+"mAAAAAAAAAAAAAA"+reset);
+            }
+        }
 
-    // bababa.add(boi[0]);
-    // bababa.add(boi[1]);
-
-    // for (int h=0; h<bababa.size();h++){
-    //     for(String[] ligne : bababa.get(h))
-    //     {
-    //         for (String oui : ligne){
-    //             System.out.print(oui);
-
-    //         }
-    //         System.out.println();
-
-    //     }
-    // System.out.println();
-    // }
-
-
-    int a;
-    Scanner sc = new Scanner(System.in);
-
-    a = sc.nextInt();
-
-    for (int i =a; i!=0+(-a/Math.abs(a)); i=i+(-a/Math.abs(a))) System.out.println(i);
-
-        
-    sc.close();
-    }
+        for (int r =0; r<256 ; r+=25) {
+            for (int g =0; g<256 ; g+=25) {
+                for (int b =0; b<256 ; b+=25) {
+                    a= rng.nextInt(256);
+                    c= rng.nextInt(256);
+                    d= rng.nextInt(256);
+                    System.out.print("\033[38;2;"+r+";"+g+";"+b+";4m██"+reset);
+                }
+                System.out.println();
+            }
+        }
 
 }
-
+}

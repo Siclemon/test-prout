@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,7 +14,8 @@ import java.util.concurrent.Future;
 
 
 public class ww {
-    static String[][] tableau =  new String[10][10];
+    static int dimensions = 10;
+    static String[][] tableau =  new String[dimensions][dimensions];
     static ArrayList<int[]> serpent = new ArrayList<>(); //{{yTete,xTete}{ySeg1,xSeg1}{ySeg2,xSeg2}}
     static HashMap<String, String[][]> dessins = new HashMap<>();
     static HashMap<String, String> couleurs = new HashMap<>();
@@ -22,9 +24,9 @@ public class ww {
     static String[][] tete = {{" "," "," "," "," "," "," "," "},{" "," ","█","\033[104m▀","\033[104m▀","█"," "," "},{" "," ","█","\033[104m▄","\033[104m▄","█"," "," "},{" "," "," "," "," "," "," "," "}};
     static String[][] corps = {{" "," "," "," "," "," "," "," "},{" "," ","█","\033[104m▀","\033[104m▀","█"," "," "},{" "," ","█","\033[104m▄","\033[104m▄","█"," "," "},{" "," "," "," "," "," "," "," "}};
     
-    static int yTete = 5, xTete = 5;
+    static int yTete = dimensions/2, xTete = dimensions/2;
     static Random rng = new Random();
-    static int yPomme = rng.nextInt(10), xPomme = rng.nextInt(10);
+    static int yPomme = rng.nextInt(dimensions), xPomme = rng.nextInt(dimensions);
     static Thread test = new Thread(new chevreuil());
     static int[] lastMove = {-1,0};
     static int yLast = -1, xLast = 0;
@@ -77,24 +79,20 @@ public class ww {
 
 
                         switch (input) {
-                            case 'z':
-                                sss.deplacement(-1,0);
-                                break;
+                            case 'z'-> sss.deplacement(-1,0);
 
-                            case 'q' :
-                                sss.deplacement(0,-1);
-                                break;
-                                
-                            case 's':
-                                sss.deplacement(1,0);
-                                break;
+                            case 'q' -> sss.deplacement(0,-1);
 
-                            case 'd' :
-                                sss.deplacement(0,1);
-                                break;
-                        
-                            default:
-                                break;
+                            case 's'-> sss.deplacement(1,0);
+
+                            case 'd' -> sss.deplacement(0,1);
+
+                            case 'o' -> {
+                                sss.deplacement(yLast, xLast);
+                                tableau[yPomme][xPomme] = " ";
+                                yPomme = yTete;
+                                xPomme = xTete;
+                            }
                         }
 
 
@@ -104,38 +102,26 @@ public class ww {
                         System.out.println("jabadabada");
                     } catch (ExecutionException ee) {
                         System.out.println("ee");
+                    } catch (CancellationException e) {
+                        System.out.println("cancel");
                     }
 
+                    //est-ce que la queue est mangée ?
+                    sss.queueMangee();
 
-                    if (yPomme==yTete && xPomme==xTete) sss.pommeMangee();
-                    else if (!perdu) {
-                        tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]] = " ";
-                        serpent.remove(serpent.size()-1);
-                    }
+                    //est-ce que la pomme est mangée ?
+                    if (!perdu) sss.pommeMangee();
 
-                    for (int i=1; i<serpent.size(); i++) {
-                        if (serpent.get(i)[0] == yTete && serpent.get(i)[1] == xTete) {
-                            perdu=true;
-                            break;
-                        }
-                    }
                 } while (!perdu);
                 System.out.println("ooooo-");
-                fut.cancel(true);
+                //fut.cancel(true);
                 System.out.println("oooooh");
-                //this.interrupt();
-                System.out.println("SAMER");
                 exec.shutdownNow();
                 System.out.println("cradopaud");
             }
         };
         
-        System.out.println("bonjour les enfantsd\n" + //
-                        "ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\\n" + //
-"ddddddddddddddddddddddddddddddddddddddddddddd\n" + //
-"ddddddddddddddddddddddddddddddddddddddddddddd\n" + //
-"ddddddddddddddddddddddddddddddddddddddddddddd\n" + //
-"ddddddddddddddddddddddddddddddddddddddddddddd\n");
+        System.out.println("bonjour les enfantsd\nddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\nddddddddddddddddddddddddddddddddddddddddddddd\nddddddddddddddddddddddddddddddddddddddddddddd\nddddddddddddddddddddddddddddddddddddddddddddd\nddddddddddddddddddddddddddddddddddddddddddddd\n");
 
         entree.start();
 
@@ -148,30 +134,41 @@ public class ww {
         System.out.println("samer");
         //while (perdu);
         System.out.println("lipopette");
-        System.out.println("ooooo");
-        fut.cancel(true);
-        System.out.println("aaaa");
+
+    }
+
+    public void queueMangee() {
+
+        for (int i=1; i<serpent.size(); i++) {
+            if (serpent.get(i)[0] == yTete && serpent.get(i)[1] == xTete) {
+                perdu=true;
+                break;
+            }
+        }
 
     }
 
     public void pommeMangee() {
-        //retire la pomme
-        //tableau[yxPomme[0]][yxPomme[1]] = " ";
 
-        //cherche une case vide pour la pomme
-        while (true) { 
-            yPomme = rng.nextInt(10);
-            xPomme = rng.nextInt(10);
+        if (yPomme==yTete && xPomme==xTete) {
+            //cherche une case vide pour la pomme
+            while (true) { 
+                yPomme = rng.nextInt(dimensions);
+                xPomme = rng.nextInt(dimensions);
 
-            int count =0;
-            for (int i=0; i<serpent.size(); i++) {
-                if (!(yPomme==serpent.get(i)[0] && xPomme==serpent.get(i)[1])) count++;
+                int count =0;
+                for (int i=0; i<serpent.size(); i++) {
+                    if (!(yPomme==serpent.get(i)[0] && xPomme==serpent.get(i)[1])) count++;
+                }
+                if (count==serpent.size()) break;
             }
-            if (count==serpent.size()) break;
-        }
 
-        //affiche la nouvelle pomme
-        tableau[yPomme][xPomme] = "pomme";
+            //affiche la nouvelle pomme
+            tableau[yPomme][xPomme] = "pomme";
+        } else {
+            tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]] = " ";
+            serpent.remove(serpent.size()-1);
+        }
     }
 
 
@@ -184,9 +181,10 @@ public class ww {
         yTete += y;
         xTete += x;
 
-        if (xTete<0 || xTete>9 || yTete<0 || yTete>9) {
+        //sorti ?
+        if (xTete<0 || xTete>dimensions-1 || yTete<0 || yTete>dimensions-1) {
             perdu = true;
-            // yTete -= y; //sinon erreur
+            // yTete -= y; //sinon erreur     ! en fait non sinon le mangeage de queue marche pas
             // xTete -= x;
             System.out.println("sorti");
         } else {
@@ -261,16 +259,15 @@ class chevreuil implements Runnable {
             if (duree>=700-8*ww.serpent.size()) {
                 jsp.deplacement(ww.yLast, ww.xLast);
 
-                if (ww.yPomme==ww.yTete && ww.xPomme==ww.xTete) jsp.pommeMangee();
-                else {
-                    ww.tableau[ww.serpent.get(ww.serpent.size()-1)[0]][ww.serpent.get(ww.serpent.size()-1)[1]] = " ";
-                    ww.serpent.remove(ww.serpent.size()-1);
-                }
+                jsp.queueMangee();
+                if (!ww.perdu) jsp.pommeMangee();
 
                 jsp.affichage(ww.tableau);
             }
             
         }
+
+        ww.fut.cancel(true);
 
     }
 }
