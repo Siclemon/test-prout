@@ -31,6 +31,7 @@ public class ww {
     static int[] lastMove = {-1,0};
     static int yLast = -1, xLast = 0;
     static boolean perdu = false;
+    static boolean pommeMangee = false;
 
 
     static Future<String> fut;
@@ -58,7 +59,8 @@ public class ww {
 
         for (String[] ligne : tableau) Arrays.fill(ligne, " ");
 
-        serpent.add(0,new int[]{yTete,xTete});
+        serpent.add(0,new int[] {yTete,xTete});
+        serpent.add(new int[] {0,0});
 
         tableau[yTete][xTete] = "tete";
         tableau[yPomme][xPomme] = "pomme";
@@ -72,11 +74,10 @@ public class ww {
                         char input;
                         
                         sss.affichage(tableau);
-                        System.out.println("Bonjour les amis !");
-                        
+                        System.out.print("\033[20;85H");
                         fut = exec.submit(new InputSnake());
                         input = fut.get().charAt(0);
-
+                        System.out.print("\033[20;85H");
 
                         switch (input) {
                             case 'z'-> sss.deplacement(-1,0);
@@ -109,19 +110,32 @@ public class ww {
                     //est-ce que la queue est mangée ?
                     sss.queueMangee();
 
-                    //est-ce que la pomme est mangée ?
-                    if (!perdu) sss.pommeMangee();
 
                 } while (!perdu);
-                System.out.println("ooooo-");
                 //fut.cancel(true);
-                System.out.println("oooooh");
                 exec.shutdownNow();
-                System.out.println("cradopaud");
             }
         };
         
-        System.out.println("bonjour les enfantsd\nddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd\nddddddddddddddddddddddddddddddddddddddddddddd\nddddddddddddddddddddddddddddddddddddddddddddd\nddddddddddddddddddddddddddddddddddddddddddddd\nddddddddddddddddddddddddddddddddddddddddddddd\n");
+
+        System.out.print("\033\143");
+        System.out.print("\033[s");
+        System.out.print("\033[?25l"); //cache le curseur
+        for (int y = 0; y < dimensions*4; y++) {
+            for (int x = 0; x < dimensions*8; x++) {
+                String galvaran = " ";
+                if (y/4 == yTete && x/8 == xTete) galvaran=tete[y%4][x%8];
+                else if (y/4 == yPomme && x/8 == xPomme) galvaran=couleurs.get("pomme")+pomme[y%4][x%8];
+                if (y%8<4 && x%16<8 || y%8>3 && x%16>7) galvaran = "\033[48;2;200;150;15m"+galvaran;
+                else galvaran = "\033[48;2;170;10;30m"+galvaran;
+                System.out.print("\033["+(y+1)+";"+(x+1)+"H"+galvaran);
+            }
+        }
+        System.out.print("\033[u");
+        System.out.print("\033[?25h"); //montre le curseur
+        System.out.print("\033[20;85H");
+        
+
 
         entree.start();
 
@@ -131,10 +145,8 @@ public class ww {
             System.out.println("erreur jsp quoi");;
         }
 
-        System.out.println("samer");
-        //while (perdu);
-        System.out.println("lipopette");
-
+        System.out.print("\033[41;1H");
+        System.out.println("perdu lol");
     }
 
     public void queueMangee() {
@@ -197,37 +209,86 @@ public class ww {
             tableau[yTete][xTete] = "tete";
 
         }
+
+        pommeMangee = false;
+        if (yPomme==yTete && xPomme==xTete) pommeMangee = true;
     }
 
     
     public void affichage(String[][] tab){
-        String[][] frame = new String[tab.length*4][tab[1].length*8];
 
-        for (int y=0;y<frame.length;y++) {
-            Arrays.fill(frame[y], " ");
+        System.out.print("\033[?25l"); //cache le curseur
+        System.out.print("\033[s"); //enregistre la posistion du curseur
+
+        System.out.print("\033[20;85H        "); //efface l'input
+
+        //TETE
+        for (int y = 0; y < 4; y++) {
+            for (int x = 0; x < 8; x++) {
+                String galvaran=tete[y%4][x%8];
+                if (yTete%2==1 && xTete%2==1 || yTete%2==0 && xTete%2==0) galvaran = "\033[48;2;200;150;15m"+galvaran;
+                else galvaran = "\033[48;2;170;10;30m"+galvaran;
+                System.out.print("\033["+(yTete*4+y+1)+";"+(xTete*8+x+1)+"H"+couleurs.get("tete")+galvaran);
+            }
         }
+        //CORPS
+        int yTemp = serpent.get(1)[0];
+        int xTemp = serpent.get(1)[1];
+        for (int y = 0; y < 4; y++) {
+            for (int x = 0; x < 8; x++) {
+                String galvaran=corps[y%4][x%8];
+                if (yTemp%2==1 && xTemp%2==1 || yTemp%2==0 && xTemp%2==0) galvaran = "\033[48;2;200;150;15m"+galvaran;
+                else galvaran = "\033[48;2;170;10;30m"+galvaran;
+                System.out.print("\033["+(yTemp*4+y+1)+";"+(xTemp*8+x+1)+"H"+couleurs.get("corps")+galvaran);
+            }
+        }
+        if (!pommeMangee) {
+            //VIDE
+            yTemp = serpent.get(serpent.size()-1)[0];
+            xTemp = serpent.get(serpent.size()-1)[1];
+            for (int y = 0; y < 4; y++) {
+                for (int x = 0; x < 8; x++) {
+                    String galvaran=r[y%4][x%8];
+                    if (yTemp%2==1 && xTemp%2==1 || yTemp%2==0 && xTemp%2==0) galvaran = "\033[48;2;200;150;15m"+galvaran;
+                    else galvaran = "\033[48;2;170;10;30m"+galvaran;
+                    System.out.print("\033["+(yTemp*4+y+1)+";"+(xTemp*8+x+1)+"H"+galvaran);
+                }
+            }
+            tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]] = " ";
+            serpent.remove(serpent.size()-1);
+        } else {
+            //cherche une case vide pour la pomme
+            while (true) { 
+                yPomme = rng.nextInt(dimensions);
+                xPomme = rng.nextInt(dimensions);
 
-        for (int y=0;y<frame.length;y++) {
-            for (int x=0; x<frame[y].length; x++) {
-
-                frame[y][x] = couleurs.get(tab[y/4][x/8]) + dessins.get(tab[y/4][x/8])[y%4][x%8];
-
-                //ajout de la couleur de fond
-                if (y%8<4 && x%16<8 || y%8>3 && x%16>7) frame[y][x] = "\033[42m"+frame[y][x];
-                else frame[y][x] = "\033[102m"+frame[y][x];
+                int count =0;
+                for (int i=0; i<serpent.size(); i++) {
+                    if (!(yPomme==serpent.get(i)[0] && xPomme==serpent.get(i)[1])) count++;
+                }
+                if (count==serpent.size()) break;
+            }
+            tableau[yPomme][xPomme] = "pomme";
+            //POMME
+            for (int y = 0; y < 4; y++) {
+                for (int x = 0; x < 8; x++) {
+                    String galvaran=pomme[y%4][x%8];
+                    if (yPomme%2==1 && xPomme%2==1 || yPomme%2==0 && xPomme%2==0) galvaran = "\033[48;2;200;150;15m"+galvaran;
+                    else galvaran = "\033[48;2;170;10;30m"+galvaran;
+                    System.out.print("\033["+(yPomme*4+y+1)+";"+(xPomme*8+x+1)+"H"+couleurs.get("pomme")+galvaran);
+                }
             }
         }
 
-        System.out.println("\033\143");
-        for (String[] ligne : frame) {
-             for (String truc : ligne) {
-                 System.out.print(truc+"\033[0m");
-            }
-            System.out.println();
-        }
+        System.out.print("\033[0m");
+        System.out.print("\033[5;85H"+serpent.size());
 
-        System.out.println(chevreuil.duree);
+        System.out.print("\033[u"); //replace en curseur à la position enregistrée
+        System.out.print("\033[?25h"); //affiche à nouveau le curseur
 
+
+
+        //System.out.println(chevreuil.duree);
         chevreuil.lastFrame = LocalTime.now();
 
         // for (int[] a : serpent){ juste pour voir les coordonnées du serpent
@@ -260,9 +321,9 @@ class chevreuil implements Runnable {
                 jsp.deplacement(ww.yLast, ww.xLast);
 
                 jsp.queueMangee();
-                if (!ww.perdu) jsp.pommeMangee();
+                //if (!ww.perdu) jsp.pommeMangee();
 
-                jsp.affichage(ww.tableau);
+                if (!ww.perdu) jsp.affichage(ww.tableau);
             }
             
         }
