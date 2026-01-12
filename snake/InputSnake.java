@@ -10,18 +10,19 @@ public class InputSnake implements Callable<String> {
 
         String input;
 
+
         do {
             try {
                 // wait until we have data to complete a readLine()
                 while (!br.ready()) {
-                    Thread.sleep(50);
+                    Thread.sleep(20);
                 }
                 input = br.readLine();
             } catch (InterruptedException e) {
-                System.out.println("interrompu");
+                System.out.println("input interrompu");
                 return null;
             }
-        } while ("".equals(input));
+        } while (input.equals(""));
 
         return input;
     }

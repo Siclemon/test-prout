@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 
-public class ww {
+public class www {
     static int dimensions = 10;
     static String[][] tableau =  new String[dimensions][dimensions];
     static ArrayList<int[]> serpent = new ArrayList<>(); //{{yTete,xTete}{ySeg1,xSeg1}{ySeg2,xSeg2}}
@@ -28,8 +28,7 @@ public class ww {
     static int yTete, xTete;
     static Random rng = new Random();
     static int yPomme = rng.nextInt(dimensions), xPomme = rng.nextInt(dimensions);
-    static Thread test = new Thread(new chevreuil());
-    static Thread test2 = new Thread(new chevreuil());
+    static Thread test = new Thread(new chevreuill());
     static int[] lastMove = {-1,0};
     static int yLast = -1, xLast = 0;
     static boolean perdu = false;
@@ -37,10 +36,9 @@ public class ww {
     static String couleurFondUn = "\033[48;2;47;138;40m",couleurFondDeux = "\033[48;2;34;112;28m";
 
 
-    static Future<String> futur;
-    static ExecutorService exec;
+    static Future<String> fut;
 
-    public ww() {
+    public www() {
         yTete = dimensions/2;
         xTete = dimensions/2;
         perdu = false;
@@ -62,13 +60,15 @@ public class ww {
         couleurFondDeux = "\033[48;2;34;112;28m";
     }
 
-    public void main() throws IOException {
-        ww sss = new ww();
+    public static void main(String[] args) throws IOException {
+        www sss = new www();
         
-        ExecutorService service = Executors.newCachedThreadPool();
-        exec = Executors.newSingleThreadExecutor();
+
+        ExecutorService exec = Executors.newSingleThreadExecutor();
         //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        //futur = exec.submit(new InputSnake());
+        //fut = exec.submit(new InputSnake());
+        
+        test.start();
 
         dessins.put(" ", r);
         dessins.put("pomme", pomme);
@@ -101,13 +101,12 @@ public class ww {
                     
                     try {
                         char input;
-                        sss.affichage();
+                        
+                        sss.affichage(tableau);
                         System.out.print("\033[20;85H");
-
-                        futur = exec.submit(new InputSnake());
-                        input = futur.get().charAt(0);
+                        fut = exec.submit(new InputSnake());
+                        input = fut.get().charAt(0);
                         System.out.print("\033[20;85H");
-
 
                         switch (input) {
                             case 'z'-> sss.deplacement(-1,0);
@@ -142,8 +141,7 @@ public class ww {
 
 
                 } while (!perdu);
-                //futur.cancel(true);
-                //notifyAll();
+                //fut.cancel(true);
                 exec.shutdownNow();
             }
         };
@@ -163,32 +161,19 @@ public class ww {
         }
         System.out.print("\033[?25h"); //montre le curseur
         System.out.print("\033[20;85H");
-
-        service.submit(test);
-
-        entree.start();
         
 
-
+        entree.start();
 
         try {
             entree.join();
         } catch (InterruptedException ex) {
             System.out.println("erreur jsp quoi");;
         }
-        
-        service.shutdown();
-
-        
         test.interrupt();
 
         System.out.print("\033[41;1H");
         System.out.println("perdu lol");
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-        }
     }
 
     public void queueMangee() {
@@ -257,7 +242,7 @@ public class ww {
     }
 
     
-    public void affichage(){
+    public void affichage(String[][] tab){
 
         System.out.print("\033[?25l"); //cache le curseur
         System.out.print("\033[s"); //enregistre la posistion du curseur
@@ -330,50 +315,49 @@ public class ww {
         System.out.print("\033[u"); //replace en curseur à la position enregistrée
         System.out.print("\033[?25h"); //affiche à nouveau le curseur
 
-        chevreuil.lastFrame = LocalTime.now();
-    }
 
-    public void afficher(String truc, int yTruc, int xTruc) {
 
-        for (int y = 0; y < 4; y++) {
-                for (int x = 0; x < 8; x++) {
-                    String galvaran=dessins.get(truc)[y][x];
-                    if (yTruc%2==1 && xTruc%2==1 || yTruc%2==0 && xTruc%2==0) galvaran = couleurFondUn+galvaran;
-                    else galvaran = couleurFondDeux+galvaran;
-                    System.out.print("\033["+(yTruc*4+y+1)+";"+(xTruc*8+x+1)+"H"+couleurs.get(truc)+galvaran);
-                }
-            }
+        //System.out.println(chevreuil.duree);
+        chevreuill.lastFrame = LocalTime.now();
 
+        // for (int[] a : serpent){ juste pour voir les coordonnées du serpent
+        //     for (int b : a){
+        //         System.out.print(b+" ");
+        //     }
+        //     System.out.println();
+        // }
 
     }
+
+    
 
 }
 
-class chevreuil implements Runnable {
+class chevreuill implements Runnable {
     static LocalTime mtn = LocalTime.now();
     static LocalTime lastFrame = LocalTime.now();
     static long duree;
-    ww jsp = new ww();
+    www jsp = new www();
 
     @Override
     public void run () {
 
-        while (!ww.perdu) { 
+        while (!www.perdu) { 
             mtn = LocalTime.now();
             duree = Duration.between(lastFrame, mtn).getSeconds()*1000+Duration.between(lastFrame, mtn).getNano()/1000000;
 
-            if (duree>=700-40*ww.serpent.size()) {
-                jsp.deplacement(ww.yLast, ww.xLast);
+            if (duree>=700-8*www.serpent.size()) {
+                jsp.deplacement(www.yLast, www.xLast);
 
                 jsp.queueMangee();
                 //if (!ww.perdu) jsp.pommeMangee();
 
-                if (!ww.perdu) jsp.affichage();
+                if (!www.perdu) jsp.affichage(www.tableau);
             }
             
         }
 
-        ww.futur.cancel(true);
+        www.fut.cancel(true);
 
     }
 }
