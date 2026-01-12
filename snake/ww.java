@@ -79,7 +79,7 @@ public class ww {
         couleurs.put("corps", "\033[38;2;200;160;0m");
 
         //couleursFond.put(" ", "");
-        couleursFond.put("pomme", "\033[48;2;190;40;13m");
+        couleursFond.put("pomme", "\033[48;2;180;35;10m");
         couleursFond.put("tete","\033[48;2;180;90;15m");
         couleursFond.put("corps", "\033[48;2;170;80;10m");
     
