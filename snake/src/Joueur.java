@@ -1,4 +1,4 @@
-package snake;
+package snake.src;
 
 public class Joueur {
     String pseudo;

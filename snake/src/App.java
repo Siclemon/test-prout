@@ -1,4 +1,4 @@
-package snake;
+package snake.src;
 
 import java.io.IOException;
 
@@ -35,6 +35,7 @@ public class App {
         
         sauv.prout();
         
+        System.out.print("\033[E");
        
     }
 }

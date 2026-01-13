@@ -1,4 +1,4 @@
-package snake;
+package snake.src;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalTime;
