@@ -20,10 +20,11 @@ public class Menu {
 
         while(true) {
             input=null;
-            System.out.print("\033[16;33H");
+            System.out.print("\033[16;30H>");
             while (input == null) {
                 try {
-                    input = br.readLine();
+                    input = br.readLine().toLowerCase();
+                    System.out.print("\033[16;33H\033[K");
                     switch (input.charAt(0)) {
                         case 'j' : 
                             return "jouer";

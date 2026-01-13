@@ -8,16 +8,14 @@ public class App {
         Login log = new Login();
         Menu menu = new Menu();
         ww jeu = new ww();
+        Save sauv = new Save();
+        boolean boucle = true;
 
         System.out.print("\033\143");
 
         nom = log.Pseudo();
-        // System.out.println(nom.repeat(5));
-        // try {
-        //     Thread.sleep(1000);
-        // } catch (InterruptedException e){}
 
-        while (true) {
+        do {
 
             switch (menu.menu(nom)) {
                 case "jouer":
@@ -25,14 +23,18 @@ public class App {
                     break;
 
                 case "quitter":
-                    System.exit(0);
+                    boucle = false;
+                    break;
             
                 case "deco":
                     nom = log.Pseudo();
+                    break;
             }
-        }
-        
 
+        } while (boucle);
+        
+        sauv.prout();
+        
        
     }
 }
