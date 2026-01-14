@@ -21,8 +21,8 @@ public class Login {
 
     public void affichage() {
         System.out.print("\033\143");
-        Display.texteLogin();
-        Display.cadre(1,1,30,80);
+        Display.texteLogin(13,38);
+        Display.cadre(1,1,40,80);
         Display.afficherTitre(3,8);
     }
 

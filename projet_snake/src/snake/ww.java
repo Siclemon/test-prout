@@ -156,6 +156,8 @@ public class ww {
         afficher("tete", yTete, xTete);
         afficher("pomme", yPomme, xPomme);
         System.out.print("\033[?25h"); //montre le curseur
+
+        Display.cadre(1, 1, 40, 80);
         System.out.print("\033[20;85H");
 
         service.submit(deplacementAuto);
@@ -309,6 +311,7 @@ public class ww {
                     System.out.print("\033["+(yTruc*4+y+1)+";"+(xTruc*8+x+1)+"H"+couleurs.get(quoi)+galvaran);
                 }
             }
+            Display.cadre(1, 1, 40, 80);
     }
 
 }
