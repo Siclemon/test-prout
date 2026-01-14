@@ -27,7 +27,7 @@ public class Display {
 
     public static void texteLogin(int y, int x) {
         System.out.print("\033[2;67H\033[3;38;2;250;250;120mby: siclemon"+reset);
-        System.out.print("\033["+y+";"+x+"Hpseudo ?");
+        System.out.print("\033["+y+";"+x+"HPseudo :");
         System.out.print("\033["+(y+1)+";"+x+"H>");
     }
 

@@ -5,18 +5,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Menu {
-    String reset = "\033[0m";
-    static String pseudo;
+    //static String pseudo;
 
     public Menu(String pseudo) {
-        this.pseudo = pseudo;
+
     }
 
     public static String menu(String pseudo) {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input;
         
-        affichage();
+        affichage(pseudo);
 
         while(true) {
             input=null;
@@ -50,7 +49,7 @@ public class Menu {
 
     }
 
-    public static void affichage() {
+    public static void affichage(String pseudo) {
         System.out.print("\033\143");
         Display.afficherTitre(3,8);
         Display.texteMenu(15,38,pseudo);

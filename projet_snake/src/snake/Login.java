@@ -15,15 +15,18 @@ public class Login {
                 pseudo = br.readLine();
             } catch (IOException e) {
             }
+            
+        Animation.stop();
         
         return pseudo;
     }
 
     public void affichage() {
         System.out.print("\033\143");
-        Display.texteLogin(13,38);
         Display.cadre(1,1,40,80);
         Display.afficherTitre(3,8);
+        Animation.anim(27,5,6,18);
+        Display.texteLogin(15,38);
     }
 
         
