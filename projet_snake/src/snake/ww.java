@@ -23,7 +23,8 @@ public class ww {
     static String[][] r = {{" "," "," "," "," "," "," "," "},{" "," "," "," "," "," "," "," "},{" "," "," "," "," "," "," "," "},{" "," "," "," "," "," "," "," "}};
     static String[][] tete = {{" "," "," "," "," "," "," "," "},{" "," ","█","▀","▀","█"," "," "},{" "," ","█","▄","▄","█"," "," "},{" "," "," "," "," "," "," "," "}};
     static String[][] corps = {{" "," "," "," "," "," "," "," "},{" "," ","█","▀","▀","█"," "," "},{" "," ","█","▄","▄","█"," "," "},{" "," "," "," "," "," "," "," "}};
-    
+    static String[][] tete2 = {{" "," "," ","▄","▄"," "," "," "},{" ","▄","█","▀","▀","█","▄"," "},{" ","▀","█","▄","▄","█","▀"," "},{" "," "," ","▀","▀"," "," "," "}};
+
     static int yTete, xTete;
     static Random rng = new Random();
     static int yPomme = rng.nextInt(dimensions), xPomme = rng.nextInt(dimensions);
@@ -157,7 +158,7 @@ public class ww {
         afficher("pomme", yPomme, xPomme);
         System.out.print("\033[?25h"); //montre le curseur
 
-        Display.cadre(1, 1, 40, 80);
+        Display.cadre(1, 1, 40, 80,"\033[48;2;100;250;100m");
         System.out.print("\033[20;85H");
 
         service.submit(deplacementAuto);
@@ -311,7 +312,7 @@ public class ww {
                     System.out.print("\033["+(yTruc*4+y+1)+";"+(xTruc*8+x+1)+"H"+couleurs.get(quoi)+galvaran);
                 }
             }
-            Display.cadre(1, 1, 40, 80);
+        Display.cadre(1, 1, 40, 80,"\033[48;2;100;250;100m");
     }
 
 }

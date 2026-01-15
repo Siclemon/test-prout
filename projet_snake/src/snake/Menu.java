@@ -53,7 +53,7 @@ public class Menu {
         System.out.print("\033\143");
         Display.afficherTitre(3,8);
         Display.texteMenu(15,38,pseudo);
-        Display.cadre(1,1,40, 80);
+        Display.cadre(1,1,40,80,"\033[48;2;100;250;100m");
     }
 
     

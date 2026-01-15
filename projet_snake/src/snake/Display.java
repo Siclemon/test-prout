@@ -26,15 +26,15 @@ public class Display {
     }
 
     public static void texteLogin(int y, int x) {
-        System.out.print("\033[2;67H\033[3;38;2;250;250;120mby: siclemon"+reset);
+        System.out.print("\033[11;61H\033[3;38;2;250;250;120mby: siclemon"+reset);
         System.out.print("\033["+y+";"+x+"HPseudo :");
         System.out.print("\033["+(y+1)+";"+x+"H>");
     }
 
-    public static void cadre(int y, int x, int hauteur, int largeur) {
+    public static void cadre(int y, int x, int hauteur, int largeur, String couleur) {
         for (int i = y; i<hauteur+y; i++) {
             for (int j = x; j<largeur+x; j++) {
-                if (j<=2 || j >= largeur-1 || i==1 || i==hauteur) System.out.print("\033["+i+";"+j+"H\033[48;2;100;250;100m "+reset);
+                if (j<=x+1 || j >= x+largeur-2 || i==y || i==y+hauteur-1) System.out.print("\033["+i+";"+j+"H"+couleur+" "+reset);
             }
         }
     }

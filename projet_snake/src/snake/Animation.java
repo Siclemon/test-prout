@@ -10,21 +10,33 @@ public class Animation {
     static ArrayList<Integer> xSerpent =  new ArrayList<>();
     static boolean stop = false;
     static int yMinc, xMinc, hauteurc, largeurc;
+    static String positionCurseur;
 
-    public static void anim(int yMin, int xMin, int hauteur, int largeur) {
+    public static void anim(int yMin, int xMin, int hauteur, int largeur, String pos) {
         yMinc = yMin;
         xMinc = xMin;
         hauteurc = hauteur;
         largeurc = largeur;
+        positionCurseur = pos;
         Thread thread = new Thread(new DeplacementAnim());
         stop = false;
 
-        damier(yMin,xMin,hauteur,largeur);
-        ySerpent.add(yMin+hauteur);
-        xSerpent.add(xMin+2*largeur);
-        afficher("\033[38;2;250;220;0m",ySerpent.get(0),xSerpent.get(0), true);
-
+        System.out.print("\033[s");
+        System.out.print("\033[?25l");
+        initialisation();
         thread.start();
+
+    }
+
+    public static void initialisation() {
+        stop = false;
+
+        damier(yMinc,xMinc,hauteurc,largeurc);
+        ySerpent.clear();
+        xSerpent.clear();
+        ySerpent.add(yMinc+hauteurc);
+        xSerpent.add(xMinc+2*largeurc);
+        afficher("\033[38;2;250;220;0m",ySerpent.get(0),xSerpent.get(0), true);
 
     }
 
@@ -33,7 +45,7 @@ public class Animation {
         ySerpent.add(0,ySerpent.get(0)+dy);
         xSerpent.add(0,xSerpent.get(0)+dx);
 
-        if(new Random().nextInt(4) != 0) {
+        if(new Random().nextInt(8) != 0) {
 
             afficher("\033[38;2;250;220;0m", (int)ySerpent.get(ySerpent.size()-1), xSerpent.get(xSerpent.size()-1), false);
 
@@ -41,10 +53,11 @@ public class Animation {
             xSerpent.remove(xSerpent.size()-1);
         }
 
-        afficher("\033[38;2;250;220;0m", ySerpent.get(0), xSerpent.get(0), true);
+        
         for (int i=1; i<ySerpent.size();i++) {
             afficher("\033[38;2;200;160;0m", ySerpent.get(i), xSerpent.get(i), true);
         }
+        afficher("\033[38;2;250;220;0m", ySerpent.get(0), xSerpent.get(0), true);
 
     }
 
@@ -54,34 +67,32 @@ public class Animation {
 
         switch (rand) {
             case 0:
-                if (check(2, 0))
-                    deplacement(2, 0);
+                check(2, 0);
                 break;
             case 1:
-                if (check(-2, 0))
-                    deplacement(-2, 0);
+                check(-2, 0);
                 break;
             case 2:
-                if (check(0, 4))
-                    deplacement(0, 4);
+                check(0, 4);
                 break;
             case 3:
-                if (check(0, -4))
-                    deplacement(0, -4);
+                check(0, -4);
+
                 break;
         }
     }
 
-    public static boolean check(int dy, int dx) {
+    public static void check(int dy, int dx) {
 
-        if (ySerpent.get(0)+dy < yMinc || ySerpent.get(0)+dy > yMinc+2*hauteurc) return false;
-        else if (xSerpent.get(0)+dx < xMinc || xSerpent.get(0)+dx > xMinc+4*largeurc) return false;
+        if (ySerpent.get(0)+dy < yMinc || ySerpent.get(0)+dy >= yMinc+2*hauteurc) return;
+        if (xSerpent.get(0)+dx < xMinc || xSerpent.get(0)+dx >= xMinc+4*largeurc) return;
 
         for (int i=1; i<ySerpent.size(); i++) {
-            if ((int)ySerpent.get(0)==(int)ySerpent.get(i) && (int)xSerpent.get(0)==(int)xSerpent.get(i)) return false;
+            if (ySerpent.get(0)+dy == ySerpent.get(i) && xSerpent.get(0)+dx == xSerpent.get(i)) return;
         }
-
-        return true;
+        
+        DeplacementAnim.moved = true;
+        deplacement(dy, dx);
     }
 
 
@@ -96,9 +107,14 @@ public class Animation {
         if (truc) forme = new String[] {"▄▄","▀▀"};
         else forme = new String[] {"  ","  "};
 
+        System.out.print("\033[s");
+        System.out.print("\033[?25l");
         
         System.out.print(fond + couleur + "\033[" + (yTruc) + ";" + (xTruc+1) + "H" + forme[0]);
-        System.out.print(fond + couleur + "\033[" + (yTruc+1) + ";" + (xTruc+1) + "H" + forme[1]);
+        System.out.print(fond + couleur + "\033[" + (yTruc+1) + ";" + (xTruc+1) + "H" + forme[1]+"\033[0m");
+
+        System.out.print(positionCurseur);
+        System.out.print("\033[?25h");
 
     }
 
@@ -129,6 +145,8 @@ class DeplacementAnim implements Runnable {
     static LocalTime mtn = LocalTime.now();
     static LocalTime lastFrame = LocalTime.now();
     static long duree;
+    static boolean moved;
+    static int tests;
 
     @Override
     public void run () {
@@ -137,9 +155,17 @@ class DeplacementAnim implements Runnable {
             mtn = LocalTime.now();
             duree = Duration.between(lastFrame, mtn).getSeconds()*1000+Duration.between(lastFrame, mtn).getNano()/1000000;
 
-            if (duree>=800) {
+            if (duree>=200) {
+                moved = false;
+                tests = 0;
 
-                Animation.choixDeplacement();
+                while (!moved) {
+                    tests++;
+
+                    if (tests>=20) Animation.initialisation();
+
+                    Animation.choixDeplacement();
+                }
 
                 //Animation.afficher("\033[38;2;250;220;0m", 50,20,true);
 
