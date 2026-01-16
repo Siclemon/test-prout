@@ -12,17 +12,18 @@ public class Animation {
     static int yMinc, xMinc, hauteurc, largeurc;
     static String positionCurseur;
 
-    public static void anim(int yMin, int xMin, int hauteur, int largeur, String pos) {
+    public static void anim(int yMin, int xMin, int hauteur, int largeur, String posCurseur) {
         yMinc = yMin;
         xMinc = xMin;
         hauteurc = hauteur;
         largeurc = largeur;
-        positionCurseur = pos;
+        positionCurseur = posCurseur;
         Thread thread = new Thread(new DeplacementAnim());
         stop = false;
 
+        System.out.print(positionCurseur);
         System.out.print("\033[s");
-        System.out.print("\033[?25l");
+        
         initialisation();
         thread.start();
 
@@ -31,12 +32,18 @@ public class Animation {
     public static void initialisation() {
         stop = false;
 
+        //System.out.print("\033[s");
+        System.out.print("\033[?25l");
+
         damier(yMinc,xMinc,hauteurc,largeurc);
         ySerpent.clear();
         xSerpent.clear();
         ySerpent.add(yMinc+hauteurc);
         xSerpent.add(xMinc+2*largeurc);
+        System.out.print("\033[u");
         afficher("\033[38;2;250;220;0m",ySerpent.get(0),xSerpent.get(0), true);
+
+        
 
     }
 
@@ -113,7 +120,7 @@ public class Animation {
         System.out.print(fond + couleur + "\033[" + (yTruc) + ";" + (xTruc+1) + "H" + forme[0]);
         System.out.print(fond + couleur + "\033[" + (yTruc+1) + ";" + (xTruc+1) + "H" + forme[1]+"\033[0m");
 
-        System.out.print(positionCurseur);
+        System.out.print("\033[u");
         System.out.print("\033[?25h");
 
     }
@@ -166,8 +173,6 @@ class DeplacementAnim implements Runnable {
 
                     Animation.choixDeplacement();
                 }
-
-                //Animation.afficher("\033[38;2;250;220;0m", 50,20,true);
 
                 lastFrame = LocalTime.now();
             }

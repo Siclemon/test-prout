@@ -21,15 +21,26 @@ public class Login {
         return pseudo;
     }
 
+    public static Joueur cacaprout(String pseudo) {
+        Joueur player;
+
+        
+
+        return player;
+    }
+
     public void affichage() {
+        final int hauteurBlocCentral = 15;
+        final String posCurseur = "\033["+(hauteurBlocCentral+3)+";40H";
+
         System.out.print("\033\143");
         Display.cadre(1,1,40,80,"\033[48;2;100;250;100m");
         Display.afficherTitre(3,8);
-        Animation.anim(27,5,6,18,"\033[16;40H");
-        Display.texteLogin(15,38);
-        Display.cadre(13, 35, 6, 16,"\033[48;2;34;112;28m");
+        Display.texteLogin(hauteurBlocCentral+2,38);
+        Display.cadre(hauteurBlocCentral, 35, 6, 16,"\033[48;2;34;112;28m");
+        Animation.anim(27,5,6,18,posCurseur);
 
-        System.out.print("\033[16;40H");
+        //System.out.print("\033[16;40H");
     }
 
         
