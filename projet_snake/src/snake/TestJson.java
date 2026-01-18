@@ -1,14 +1,19 @@
 package snake;
 import java.io.FileWriter;
 import java.io.IOException;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class TestJson {
     public static void main(String[] args) throws IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        FileWriter file = new FileWriter("snake\\test.json");
+        Joueur player = new Joueur("fesse");
+        player.setMoney(10);
 
-        gson.toJson("test caca",file);
+        try (FileWriter file = new FileWriter("src\\snake\\baaaaatest.json");) {
+            gson.toJson(player,file);
+        }
+
     }
 }

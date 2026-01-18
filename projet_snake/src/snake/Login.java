@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Login {
-    public String Pseudo() {
+    public static Joueur login() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String pseudo=null;
 
@@ -18,18 +18,11 @@ public class Login {
             
         Animation.stop();
         
-        return pseudo;
+        return Save.playerData(pseudo);
     }
 
-    public static Joueur cacaprout(String pseudo) {
-        Joueur player;
 
-        
-
-        return player;
-    }
-
-    public void affichage() {
+    public static void affichage() {
         final int hauteurBlocCentral = 15;
         final String posCurseur = "\033["+(hauteurBlocCentral+3)+";40H";
 

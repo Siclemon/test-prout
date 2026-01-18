@@ -46,3 +46,6 @@ C4EST 9A
 javac -cp lib/gson-2.13.2.jar **/**/*.java *.java -d classes/
 
 java -cp "classes:lib/gson-2.13.2.jar" App
+
+mvn clean compile
+mvn exec:java -Dexec.mainClass="App"

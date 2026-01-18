@@ -1,0 +1,167 @@
+[
+  {
+    "pseudo": "caaca",
+    "money": 0,
+    "highScore": 0,
+    "skins": {
+      "colorHeadFG": "\u001b[38;2;250;220;0m",
+      "colorHeadBG": "\u001b[48;2;180;90;15m",
+      "colorBodyFG": "\u001b[38;2;200;160;0m",
+      "colorBodyBG": "\u001b[48;2;170;80;10m",
+      "colorFoodFG": "\u001b[38;2;156;13;3m",
+      "colorFoodBG": "\u001b[48;2;180;35;10m",
+      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
+      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+    }
+  },
+  {
+    "pseudo": "azeze",
+    "money": 0,
+    "highScore": 0,
+    "skins": {
+      "colorHeadFG": "\u001b[38;2;250;220;0m",
+      "colorHeadBG": "\u001b[48;2;180;90;15m",
+      "colorBodyFG": "\u001b[38;2;200;160;0m",
+      "colorBodyBG": "\u001b[48;2;170;80;10m",
+      "colorFoodFG": "\u001b[38;2;156;13;3m",
+      "colorFoodBG": "\u001b[48;2;180;35;10m",
+      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
+      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+    }
+  },
+  {
+    "pseudo": "aaa",
+    "money": 0,
+    "highScore": 0,
+    "skins": {
+      "colorHeadFG": "\u001b[38;2;250;220;0m",
+      "colorHeadBG": "\u001b[48;2;180;90;15m",
+      "colorBodyFG": "\u001b[38;2;200;160;0m",
+      "colorBodyBG": "\u001b[48;2;170;80;10m",
+      "colorFoodFG": "\u001b[38;2;156;13;3m",
+      "colorFoodBG": "\u001b[48;2;180;35;10m",
+      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
+      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+    }
+  },
+  {
+    "pseudo": "aze",
+    "money": 0,
+    "highScore": 0,
+    "games": [],
+    "skins": {
+      "colorHeadFG": "\u001b[38;2;250;220;0m",
+      "colorHeadBG": "\u001b[48;2;180;90;15m",
+      "colorBodyFG": "\u001b[38;2;200;160;0m",
+      "colorBodyBG": "\u001b[48;2;170;80;10m",
+      "colorFoodFG": "\u001b[38;2;156;13;3m",
+      "colorFoodBG": "\u001b[48;2;180;35;10m",
+      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
+      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+    }
+  },
+  {
+    "pseudo": "Climcloum",
+    "money": 0,
+    "highScore": 0,
+    "games": [
+      {
+        "score": 17,
+        "date": "17/01/2026 - 23:30:05"
+      }
+    ],
+    "skins": {
+      "colorHeadFG": "\u001b[38;2;250;220;0m",
+      "colorHeadBG": "\u001b[48;2;180;90;15m",
+      "colorBodyFG": "\u001b[38;2;200;160;0m",
+      "colorBodyBG": "\u001b[48;2;170;80;10m",
+      "colorFoodFG": "\u001b[38;2;156;13;3m",
+      "colorFoodBG": "\u001b[48;2;180;35;10m",
+      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
+      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+    }
+  },
+  {
+    "pseudo": "Siclemon",
+    "money": 0,
+    "highScore": 7,
+    "games": [
+      {
+        "score": 7,
+        "date": "18/01/2026 - 16:45:39"
+      },
+      {
+        "score": 3,
+        "date": "17/01/2026 - 13:14:11"
+      }
+    ],
+    "skins": {
+      "colorHeadFG": "\u001b[38;2;250;220;0m",
+      "colorHeadBG": "\u001b[48;2;180;90;15m",
+      "colorBodyFG": "\u001b[38;2;200;160;0m",
+      "colorBodyBG": "\u001b[48;2;170;80;10m",
+      "colorFoodFG": "\u001b[38;2;156;13;3m",
+      "colorFoodBG": "\u001b[48;2;180;35;10m",
+      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
+      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+    }
+  },
+  {
+    "pseudo": "test",
+    "money": 0,
+    "highScore": 2,
+    "games": [
+      {
+        "score": 2,
+        "date": "18/01/2026 - 17:25:31"
+      }
+    ],
+    "skins": {
+      "colorHeadFG": "\u001b[38;2;250;220;0m",
+      "colorHeadBG": "\u001b[48;2;180;90;15m",
+      "colorBodyFG": "\u001b[38;2;200;160;0m",
+      "colorBodyBG": "\u001b[48;2;170;80;10m",
+      "colorFoodFG": "\u001b[38;2;156;13;3m",
+      "colorFoodBG": "\u001b[48;2;180;35;10m",
+      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
+      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+    }
+  },
+  {
+    "pseudo": "j",
+    "money": 0,
+    "highScore": 1,
+    "games": [
+      {
+        "score": 1,
+        "date": "18/01/2026 - 17:25:49"
+      }
+    ],
+    "skins": {
+      "colorHeadFG": "\u001b[38;2;250;220;0m",
+      "colorHeadBG": "\u001b[48;2;180;90;15m",
+      "colorBodyFG": "\u001b[38;2;200;160;0m",
+      "colorBodyBG": "\u001b[48;2;170;80;10m",
+      "colorFoodFG": "\u001b[38;2;156;13;3m",
+      "colorFoodBG": "\u001b[48;2;180;35;10m",
+      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
+      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+    }
+  },
+  {
+    "pseudo": "f",
+    "money": 0,
+    "highScore": 0,
+    "games": [],
+    "skins": {
+      "colorHeadFG": "\u001b[38;2;250;220;0m",
+      "colorHeadBG": "\u001b[48;2;180;90;15m",
+      "colorBodyFG": "\u001b[38;2;200;160;0m",
+      "colorBodyBG": "\u001b[48;2;170;80;10m",
+      "colorFoodFG": "\u001b[38;2;156;13;3m",
+      "colorFoodBG": "\u001b[48;2;180;35;10m",
+      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
+      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+    }
+  }
+]
