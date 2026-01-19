@@ -49,3 +49,5 @@ java -cp "classes:lib/gson-2.13.2.jar" App
 
 mvn clean compile
 mvn exec:java -Dexec.mainClass="App"
+
+-> mvn exec:java
