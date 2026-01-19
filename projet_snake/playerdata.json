@@ -1,17 +1,195 @@
 [
   {
+    "pseudo": "j",
+    "money": 0,
+    "highScore": 47,
+    "games": [
+      {
+        "score": 7,
+        "date": "19/01/2026 - 16:01:30"
+      },
+      {
+        "score": 13,
+        "date": "19/01/2026 - 16:00:58"
+      },
+      {
+        "score": 40,
+        "date": "19/01/2026 - 15:58:18"
+      },
+      {
+        "score": 17,
+        "date": "19/01/2026 - 15:56:27"
+      },
+      {
+        "score": 27,
+        "date": "19/01/2026 - 15:56:05"
+      },
+      {
+        "score": 47,
+        "date": "19/01/2026 - 15:55:14"
+      },
+      {
+        "score": 10,
+        "date": "19/01/2026 - 15:55:06"
+      },
+      {
+        "score": 19,
+        "date": "19/01/2026 - 15:54:51"
+      },
+      {
+        "score": 30,
+        "date": "19/01/2026 - 15:54:28"
+      },
+      {
+        "score": 26,
+        "date": "19/01/2026 - 15:53:26"
+      },
+      {
+        "score": 7,
+        "date": "19/01/2026 - 15:45:42"
+      },
+      {
+        "score": 7,
+        "date": "19/01/2026 - 15:41:04"
+      },
+      {
+        "score": 7,
+        "date": "19/01/2026 - 15:29:44"
+      },
+      {
+        "score": 1,
+        "date": "18/01/2026 - 17:25:49"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "",
+    "money": 0,
+    "highScore": 7,
+    "games": [
+      {
+        "score": 7,
+        "date": "19/01/2026 - 15:46:46"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "sqdio",
+    "money": 0,
+    "highScore": 7,
+    "games": [
+      {
+        "score": 7,
+        "date": "19/01/2026 - 15:04:14"
+      },
+      {
+        "score": 7,
+        "date": "19/01/2026 - 15:03:11"
+      },
+      {
+        "score": 7,
+        "date": "19/01/2026 - 15:03:02"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "fsd",
+    "money": 0,
+    "highScore": 1,
+    "games": [
+      {
+        "score": 1,
+        "date": "19/01/2026 - 14:26:28"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "ek",
+    "money": 0,
+    "highScore": 3,
+    "games": [
+      {
+        "score": 3,
+        "date": "19/01/2026 - 12:16:06"
+      },
+      {
+        "score": 3,
+        "date": "19/01/2026 - 12:15:52"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "Nucleon",
+    "money": 0,
+    "highScore": 23,
+    "games": [
+      {
+        "score": 23,
+        "date": "19/01/2026 - 12:12:39"
+      },
+      {
+        "score": 17,
+        "date": "19/01/2026 - 08:17:51"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "io\u003coikqsj",
+    "money": 0,
+    "highScore": 0,
+    "games": [],
+    "skins": {
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
+    }
+  },
+  {
     "pseudo": "caaca",
     "money": 0,
     "highScore": 0,
     "skins": {
-      "colorHeadFG": "\u001b[38;2;250;220;0m",
-      "colorHeadBG": "\u001b[48;2;180;90;15m",
-      "colorBodyFG": "\u001b[38;2;200;160;0m",
-      "colorBodyBG": "\u001b[48;2;170;80;10m",
-      "colorFoodFG": "\u001b[38;2;156;13;3m",
-      "colorFoodBG": "\u001b[48;2;180;35;10m",
-      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
-      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
     }
   },
   {
@@ -19,14 +197,10 @@
     "money": 0,
     "highScore": 0,
     "skins": {
-      "colorHeadFG": "\u001b[38;2;250;220;0m",
-      "colorHeadBG": "\u001b[48;2;180;90;15m",
-      "colorBodyFG": "\u001b[38;2;200;160;0m",
-      "colorBodyBG": "\u001b[48;2;170;80;10m",
-      "colorFoodFG": "\u001b[38;2;156;13;3m",
-      "colorFoodBG": "\u001b[48;2;180;35;10m",
-      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
-      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
     }
   },
   {
@@ -34,14 +208,10 @@
     "money": 0,
     "highScore": 0,
     "skins": {
-      "colorHeadFG": "\u001b[38;2;250;220;0m",
-      "colorHeadBG": "\u001b[48;2;180;90;15m",
-      "colorBodyFG": "\u001b[38;2;200;160;0m",
-      "colorBodyBG": "\u001b[48;2;170;80;10m",
-      "colorFoodFG": "\u001b[38;2;156;13;3m",
-      "colorFoodBG": "\u001b[48;2;180;35;10m",
-      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
-      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
     }
   },
   {
@@ -50,14 +220,10 @@
     "highScore": 0,
     "games": [],
     "skins": {
-      "colorHeadFG": "\u001b[38;2;250;220;0m",
-      "colorHeadBG": "\u001b[48;2;180;90;15m",
-      "colorBodyFG": "\u001b[38;2;200;160;0m",
-      "colorBodyBG": "\u001b[48;2;170;80;10m",
-      "colorFoodFG": "\u001b[38;2;156;13;3m",
-      "colorFoodBG": "\u001b[48;2;180;35;10m",
-      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
-      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
     }
   },
   {
@@ -71,14 +237,10 @@
       }
     ],
     "skins": {
-      "colorHeadFG": "\u001b[38;2;250;220;0m",
-      "colorHeadBG": "\u001b[48;2;180;90;15m",
-      "colorBodyFG": "\u001b[38;2;200;160;0m",
-      "colorBodyBG": "\u001b[48;2;170;80;10m",
-      "colorFoodFG": "\u001b[38;2;156;13;3m",
-      "colorFoodBG": "\u001b[48;2;180;35;10m",
-      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
-      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
     }
   },
   {
@@ -96,14 +258,10 @@
       }
     ],
     "skins": {
-      "colorHeadFG": "\u001b[38;2;250;220;0m",
-      "colorHeadBG": "\u001b[48;2;180;90;15m",
-      "colorBodyFG": "\u001b[38;2;200;160;0m",
-      "colorBodyBG": "\u001b[48;2;170;80;10m",
-      "colorFoodFG": "\u001b[38;2;156;13;3m",
-      "colorFoodBG": "\u001b[48;2;180;35;10m",
-      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
-      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
     }
   },
   {
@@ -117,35 +275,10 @@
       }
     ],
     "skins": {
-      "colorHeadFG": "\u001b[38;2;250;220;0m",
-      "colorHeadBG": "\u001b[48;2;180;90;15m",
-      "colorBodyFG": "\u001b[38;2;200;160;0m",
-      "colorBodyBG": "\u001b[48;2;170;80;10m",
-      "colorFoodFG": "\u001b[38;2;156;13;3m",
-      "colorFoodBG": "\u001b[48;2;180;35;10m",
-      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
-      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
-    }
-  },
-  {
-    "pseudo": "j",
-    "money": 0,
-    "highScore": 1,
-    "games": [
-      {
-        "score": 1,
-        "date": "18/01/2026 - 17:25:49"
-      }
-    ],
-    "skins": {
-      "colorHeadFG": "\u001b[38;2;250;220;0m",
-      "colorHeadBG": "\u001b[48;2;180;90;15m",
-      "colorBodyFG": "\u001b[38;2;200;160;0m",
-      "colorBodyBG": "\u001b[48;2;170;80;10m",
-      "colorFoodFG": "\u001b[38;2;156;13;3m",
-      "colorFoodBG": "\u001b[48;2;180;35;10m",
-      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
-      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
     }
   },
   {
@@ -154,14 +287,22 @@
     "highScore": 0,
     "games": [],
     "skins": {
-      "colorHeadFG": "\u001b[38;2;250;220;0m",
-      "colorHeadBG": "\u001b[48;2;180;90;15m",
-      "colorBodyFG": "\u001b[38;2;200;160;0m",
-      "colorBodyBG": "\u001b[48;2;170;80;10m",
-      "colorFoodFG": "\u001b[38;2;156;13;3m",
-      "colorFoodBG": "\u001b[48;2;180;35;10m",
-      "colorBackgroundOne": "\u001b[48;2;47;138;40m",
-      "colorBackgroundTwo": "\u001b[48;2;34;112;28m"
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "aaaaaaaaaaa",
+    "money": 0,
+    "highScore": 0,
+    "games": [],
+    "skins": {
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
     }
   }
 ]

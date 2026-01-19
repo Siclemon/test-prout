@@ -4,7 +4,9 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -15,11 +17,16 @@ import java.util.concurrent.Future;
 
 public class Game {
     static final int dimensions = 10;
-    //static String[][] tableau =  new String[dimensions][dimensions];
+    static String[][] tableau =  new String[dimensions][dimensions];
     static ArrayList<int[]> serpent = new ArrayList<>(); //{{yTete,xTete}{ySeg1,xSeg1}{ySeg2,xSeg2}}
     static HashMap<String, String[][]> dessins = new HashMap<>();
     static HashMap<String, String> couleurs = new HashMap<>();
     static HashMap<String, String> couleursFond = new HashMap<>();
+    static HashMap<String, String[][]> choses = new HashMap<>();
+    static HashMap<String, String[][]> skinsPomme = new HashMap<>();
+    static HashMap<String, String[][]> skinsTete = new HashMap<>();
+    static HashMap<String, String[][]> skinsCorps = new HashMap<>();
+    static HashMap<String, String[]> skinsFond = new HashMap<>();
     static String[][] pomme = {{" "," "," "," "," "," "," "," "},{" "," ","█","▀","▀","█"," "," "},{" "," ","█","▄","▄","█"," "," "},{" "," "," "," "," "," "," "," "}};
     static String[][] r = {{" "," "," "," "," "," "," "," "},{" "," "," "," "," "," "," "," "},{" "," "," "," "," "," "," "," "},{" "," "," "," "," "," "," "," "}};
     static String[][] tete = {{" "," "," "," "," "," "," "," "},{" "," ","█","▀","▀","█"," "," "},{" "," ","█","▄","▄","█"," "," "},{" "," "," "," "," "," "," "," "}};
@@ -41,11 +48,13 @@ public class Game {
 
     static LocalDateTime date;
 
+    Skins skinsList = new Skins();
+
     public Game() {
         yTete = dimensions/2;
         xTete = dimensions/2;
         perdu = false;
-        //tableau =  new String[dimensions][dimensions];
+        tableau =  new String[dimensions][dimensions];
         serpent = new ArrayList<>(); 
         dessins = new HashMap<>();
         couleurs = new HashMap<>();
@@ -67,32 +76,28 @@ public class Game {
         
         ExecutorService service = Executors.newCachedThreadPool();
         exec = Executors.newSingleThreadExecutor();
-        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        //futur = exec.submit(new InputSnake());
 
-        dessins.put(" ", r);
-        dessins.put("pomme", pomme);
-        dessins.put("tete",tete);
-        dessins.put("corps", corps);
 
-        couleurs.put(" ", "");
-        couleurs.put("pomme", "\033[38;2;156;13;3m");
-        couleurs.put("tete","\033[38;2;250;220;0m");
-        couleurs.put("corps", "\033[38;2;200;160;0m");
 
-        //couleursFond.put(" ", "");
-        couleursFond.put("pomme", "\033[48;2;180;35;10m");
-        couleursFond.put("tete","\033[48;2;180;90;15m");
-        couleursFond.put("corps", "\033[48;2;170;80;10m");
+        // Map<String,String[][]> skinsFruit = skinsList.getSkins("fruit");
+        // String quelFuit = player.skins.getFruit();
+        // String[][] fruit = skinsFruit.get(quelFuit);
+
+        choses.put("pomme", skinsList.getSkins("fruit").get(player.skins.getFruit()));
+        choses.put("tete", skinsList.getSkins("head").get(player.skins.head));
+        choses.put("corps", skinsList.getSkins("body").get(player.skins.body));
+        //choses.put("fond", skinsList.getSkins("back").get(player.skins.back));
+        couleurFondUn = skinsList.getBack().get(player.skins.back)[1];
+        couleurFondDeux = skinsList.getBack().get(player.skins.back)[2];
     
 
-        //for (String[] ligne : tableau) Arrays.fill(ligne, " ");
+        for (String[] ligne : tableau) Arrays.fill(ligne, " ");
 
         serpent.add(0,new int[] {yTete,xTete});
         serpent.add(new int[] {0,0});
 
-        //tableau[yTete][xTete] = "tete";
-        //tableau[yPomme][xPomme] = "pomme";
+        tableau[yTete][xTete] = "tete";
+        tableau[yPomme][xPomme] = "pomme";
 
         Thread entree = new Thread() {
             @Override
@@ -101,7 +106,8 @@ public class Game {
                     
                     try {
                         char input;
-                        sss.affichage();
+                        //sss.affichage();
+                        sss.aff();
                         System.out.print("\033[20;85H");
 
                         futur = exec.submit(new InputSnake());
@@ -146,20 +152,20 @@ public class Game {
         
         //AFFICHAGE INITIAL
         System.out.print("\033\143");
-        System.out.print("\033[?25l"); //cache le curseur
-        for (int y = 0; y < dimensions*4; y++) {
-            for (int x = 0; x < dimensions*8; x++) {
-                String galvaran = " ";
-                if (y%8<4 && x%16<8 || y%8>3 && x%16>7) galvaran = couleurFondUn+galvaran;
-                else galvaran = couleurFondDeux+galvaran;
-                System.out.print("\033["+(y+1)+";"+(x+1)+"H"+galvaran);
-            }
-        }
-        afficher("tete", yTete, xTete);
-        afficher("pomme", yPomme, xPomme);
-        System.out.print("\033[?25h"); //montre le curseur
+        // System.out.print("\033[?25l"); //cache le curseur
+        // for (int y = 0; y < dimensions*4; y++) {
+        //     for (int x = 0; x < dimensions*8; x++) {
+        //         String galvaran = " ";
+        //         if (y%8<4 && x%16<8 || y%8>3 && x%16>7) galvaran = couleurFondUn+galvaran;
+        //         else galvaran = couleurFondDeux+galvaran;
+        //         System.out.print("\033["+(y+1)+";"+(x+1)+"H"+galvaran);
+        //     }
+        // }
+        // afficher("tete", yTete, xTete);
+        // afficher("pomme", yPomme, xPomme);
+        // System.out.print("\033[?25h"); //montre le curseur
 
-        Display.cadre(1, 1, 40, 80,"\033[48;2;100;250;100m");
+        Display.cadre(1, 1, 42, 84,"\033[48;2;100;250;100m");
         System.out.print("\033[20;85H");
 
         service.submit(deplacementAuto);
@@ -192,6 +198,34 @@ public class Game {
         }
     }
 
+    public void aff() {
+        String[][] tabaff = new String[40][80];
+
+        for (int y=0; y<tabaff.length; y++) {
+            for (int x = 0; x < tabaff[y].length; x++) {
+                String machin = "▀";
+
+                if (tableau[y/4][x/8] != " ")
+                    machin = choses.get(tableau[y/4][x/8])[y%4][x%8] + machin;
+
+                if (y%8<4 && x%16<8 || y%8>3 && x%16>7) machin = couleurFondUn + machin;
+                else machin = couleurFondDeux + machin;
+
+                tabaff[y][x] = machin;
+            }
+        }
+
+        System.out.print("\033[2;3H");
+        for (String[] ligne : tabaff) {
+            for (String caractere : ligne) {
+                System.out.print(caractere+"\033[0m");
+            }
+            System.out.print("\n\033[2C");
+        }
+
+        DeplacementAutomatique.lastFrame = LocalTime.now();
+    }
+
     public void queueMangee() {
 
         for (int i=1; i<serpent.size(); i++) {
@@ -219,9 +253,9 @@ public class Game {
             }
 
             //affiche la nouvelle pomme
-            //tableau[yPomme][xPomme] = "pomme";
+            tableau[yPomme][xPomme] = "pomme";
         } else {
-            //tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]] = " ";
+            tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]] = " ";
             serpent.remove(serpent.size()-1);
         }
     }
@@ -246,10 +280,10 @@ public class Game {
 
             serpent.add(0,new int[] {yTete,xTete}); //nouvelle position de la tete
 
-            //for (int i=1; i<serpent.size(); i++) {
-                //tableau[serpent.get(i)[0]][serpent.get(i)[1]] = "corps";
-            //}
-            //tableau[yTete][xTete] = "tete";
+            for (int i=1; i<serpent.size(); i++) {
+                tableau[serpent.get(i)[0]][serpent.get(i)[1]] = "corps";
+            }
+            tableau[yTete][xTete] = "tete";
 
         }
 
@@ -277,7 +311,7 @@ public class Game {
             yTemp = serpent.get(serpent.size()-1)[0];
             xTemp = serpent.get(serpent.size()-1)[1];
             afficher(" ",yTemp,xTemp);
-            //tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]] = " ";
+            tableau[serpent.get(serpent.size()-1)[0]][serpent.get(serpent.size()-1)[1]] = " ";
             serpent.remove(serpent.size()-1);
         } else {
             //cherche une case vide pour la pomme
@@ -291,7 +325,7 @@ public class Game {
                 }
                 if (count==serpent.size()) break;
             }
-            //tableau[yPomme][xPomme] = "pomme";
+            tableau[yPomme][xPomme] = "pomme";
             //POMME
             
         }
@@ -340,7 +374,7 @@ class DeplacementAutomatique implements Runnable {
                 jsp.queueMangee();
                 //if (!ww.perdu) jsp.pommeMangee();
 
-                if (!Game.perdu) jsp.affichage();
+                if (!Game.perdu) jsp.aff();
             }
             
         }

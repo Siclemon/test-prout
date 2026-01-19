@@ -32,24 +32,24 @@ public class Joueur {
     }
 
     public static class Skins {
-        String colorHeadFG;
-        String colorHeadBG;
-        String colorBodyFG;
-        String colorBodyBG;
-        String colorFoodFG;
-        String colorFoodBG;
-        String colorBackgroundOne;
-        String colorBackgroundTwo;
+        private String fruit;
+        String head;
+        String body;
+        String back;
 
         public Skins() {
-            this.colorBackgroundOne = "\033[48;2;47;138;40m";
-            this.colorBackgroundTwo = "\033[48;2;34;112;28m";
-            this.colorHeadFG = "\033[38;2;250;220;0m";
-            this.colorHeadBG = "\033[48;2;180;90;15m";
-            this.colorBodyFG = "\033[38;2;200;160;0m";
-            this.colorBodyBG = "\033[48;2;170;80;10m";
-            this.colorFoodFG = "\033[38;2;156;13;3m";
-            this.colorFoodBG = "\033[48;2;180;35;10m";
+            this.fruit = "red";
+            this.head = "red";
+            this.body = "red";
+            this.back = "green";
+        }
+
+        public String getFruit(){
+            return fruit;
+        }
+
+        public void setFruit(String fruit){
+            this.fruit = fruit;
         }
     }
 

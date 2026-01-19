@@ -26,7 +26,7 @@ public class Save {
         if (allSaveFiles() == null) players = new ArrayList<>();
         else players = new ArrayList<>(allSaveFiles());
 
-        if (newSave) players.add(player);
+        if (newSave) players.add(0,player);
         else {
             for (Joueur elem : players) {
                 if (player.getPseudo().equals(elem.getPseudo())) {
@@ -78,14 +78,6 @@ public class Save {
 
         Joueur player = new Joueur(pseudo);
         Joueur.Skins skins = new Joueur.Skins();
-        skins.colorBackgroundOne = "\033[48;2;47;138;40m";
-        skins.colorBackgroundTwo = "\033[48;2;34;112;28m";
-        skins.colorHeadFG = "\033[38;2;250;220;0m";
-        skins.colorHeadBG = "\033[48;2;180;90;15m";
-        skins.colorBodyFG = "\033[38;2;200;160;0m";
-        skins.colorBodyBG = "\033[48;2;170;80;10m";
-        skins.colorFoodFG = "\033[38;2;156;13;3m";
-        skins.colorFoodBG = "\033[48;2;180;35;10m";
         
         return player;
     }
