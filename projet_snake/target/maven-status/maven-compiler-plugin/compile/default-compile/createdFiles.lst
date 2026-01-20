@@ -4,11 +4,11 @@ snake/DeplacementAutomatique.class
 snake/Skins$2.class
 snake/Login.class
 snake/Display.class
+SkinBuilder.class
 snake/Menu.class
 snake/Input.class
 snake/Game.class
 snake/DeplacementAnim.class
-snake/Touche.class
 snake/TestJson.class
 snake/Save.class
 snake/Joueur$Skins.class
