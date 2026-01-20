@@ -1,43 +1,33 @@
 [
   {
-    "pseudo": "nlnlnl",
-    "money": 0,
-    "highScore": 2,
-    "games": [
-      {
-        "score": 2,
-        "date": "20/01/2026 - 11:11:10"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "nlnlnl",
-    "money": 0,
-    "highScore": 2,
-    "games": [
-      {
-        "score": 2,
-        "date": "20/01/2026 - 11:11:10"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
     "pseudo": "Siclemon",
     "money": 0,
-    "highScore": 7,
+    "highScore": 15,
     "games": [
+      {
+        "score": 15,
+        "date": "20/01/2026 - 22:08:01"
+      },
+      {
+        "score": 2,
+        "date": "20/01/2026 - 22:07:40"
+      },
+      {
+        "score": 12,
+        "date": "20/01/2026 - 21:59:02"
+      },
+      {
+        "score": 7,
+        "date": "20/01/2026 - 21:58:13"
+      },
+      {
+        "score": 4,
+        "date": "20/01/2026 - 21:03:26"
+      },
+      {
+        "score": 9,
+        "date": "20/01/2026 - 20:49:19"
+      },
       {
         "score": 4,
         "date": "20/01/2026 - 11:10:47"
@@ -52,9 +42,9 @@
       }
     ],
     "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
+      "fruit": "pokeball",
+      "head": "blue",
+      "body": "blue",
       "back": "green"
     }
   },
@@ -63,6 +53,22 @@
     "money": 0,
     "highScore": 66,
     "games": [
+      {
+        "score": 5,
+        "date": "20/01/2026 - 22:04:34"
+      },
+      {
+        "score": 5,
+        "date": "20/01/2026 - 22:02:33"
+      },
+      {
+        "score": 1,
+        "date": "20/01/2026 - 22:01:10"
+      },
+      {
+        "score": 2,
+        "date": "20/01/2026 - 20:54:23"
+      },
       {
         "score": 2,
         "date": "20/01/2026 - 09:06:13"
@@ -198,6 +204,57 @@
       {
         "score": 1,
         "date": "18/01/2026 - 17:25:49"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "Siclemmon",
+    "money": 0,
+    "highScore": 4,
+    "games": [
+      {
+        "score": 4,
+        "date": "20/01/2026 - 20:47:13"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "nlnlnl",
+    "money": 0,
+    "highScore": 2,
+    "games": [
+      {
+        "score": 2,
+        "date": "20/01/2026 - 11:11:10"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "nlnlnl",
+    "money": 0,
+    "highScore": 2,
+    "games": [
+      {
+        "score": 2,
+        "date": "20/01/2026 - 11:11:10"
       }
     ],
     "skins": {

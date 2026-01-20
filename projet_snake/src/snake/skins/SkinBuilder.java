@@ -1,18 +1,20 @@
 package snake.skins;
 
 import java.util.HashMap;
-
 import java.util.Scanner;
+
+import snake.Skins;
 
 public class SkinBuilder {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String couleur;
+        Skins skins = new Skins();
         String[][] skin = new String[4][8];
         String[][] temp = new String[4][8];
         int nbCouleurs;
         HashMap<Integer, String> couleurs = new HashMap<>();
+        String couleurFond = "47;138;40m";
         couleurs.put(0, "47;138;40m");
 
         for (int i = 0; i < temp.length; i++) {
@@ -23,7 +25,7 @@ public class SkinBuilder {
         }
 
         System.out.print("\033\143");
-        String fichier = fichier();
+        String quoi = fichier();
 
         do {
             System.out.print("\033\143");
@@ -51,25 +53,37 @@ public class SkinBuilder {
         for (int y = 0; y < 8; y++) {
             for (int x = 0; x < 8; x++) {
                 if ((x+y)%2==0) 
-                    temp[y/2][x] = "\033[" + (38 + devantOuDerriere(y)) + ";2;120;120;120m";
-                else temp[y/2][x] = "\033[" + (38 + devantOuDerriere(y)) + ";2;150;150;150m";
+                    temp[y/2][x] = "\033[" + devantOuDerriere(y) + ";2;120;120;120m";
+                else temp[y/2][x] = "\033[" + devantOuDerriere(y) + ";2;150;150;150m";
                 System.out.print(temp[y/2][x] + "\033[" + (y/2 + 1) + ";" + (x + 1) + "H▀" + "\033[m");
 
             }
         }
-        sc.nextInt();
+
         afficherCouleurs(couleurs, nbCouleurs);
 
         for (int y = 0; y < 8; y++) {
             for (int x = 0; x < 8; x++) {
-                temp[y/2][x] = temp[y/2][x] + skin[y/2][x] +"\033[" + (38 + devantOuDerriere(y)) + ";2;255;255;0m";
+                temp[y/2][x] = temp[y/2][x] + skin[y/2][x] +"\033[" + devantOuDerriere(y) + ";2;255;255;0m";
                 System.out.print(temp[y/2][x] + "\033[" + (y/2 + 1) + ";" + (x + 1) + "H▀" + "\033[m");
                 System.out.print("\033[6;1H");
-                skin[y/2][x] = "\033[" + (38 + devantOuDerriere(y)) + ";2;" + couleurs.get(sc.nextInt()) + skin[y/2][x];
+                int choix = sc.nextInt();
+                if (choix != 0)
+                    skin[y/2][x] = "\033[" + devantOuDerriere(y) + ";2;" + couleurs.get(choix) + skin[y/2][x];
+                else temp[y/2][x] = temp[y/2][x] + "\033[" + devantOuDerriere(y) + ";2;" + couleurFond;
                 temp[y/2][x] += skin[y/2][x];
                 System.out.print(temp[y/2][x] + "\033[" + (y/2 + 1) + ";" + (x + 1) + "H▀" + "\033[m");
             }
         }
+
+        try { Thread.sleep(1500);}
+        catch (InterruptedException e){}
+
+        sc.nextLine();
+        System.out.println("Quel nom ?");
+        String nom = sc.nextLine();
+
+        skins.newSkin(quoi, nom, skin);
 
         sc.close();
     }
@@ -81,19 +95,19 @@ public class SkinBuilder {
         while (true)
             switch (sc.nextInt()) {
                 case 1:
-                    return "src/snake/skins/head.json";
+                    return "head";
                 case 2:
-                    return "src/snake/skins/body.json";
+                    return "body";
                 case 3:
-                    return "src/snake/skins/fruit.json";
+                    return "fruit";
         }
     }
 
     static int devantOuDerriere(int y) {
         if (y % 2 == 0)
-            return 0;
+            return 38;
         else
-            return 10;
+            return 48;
     }
 
     static String couleur(int indice) {
@@ -102,7 +116,7 @@ public class SkinBuilder {
         do {
             ok = false;
             System.out.print("Couleur "+indice+" : ");
-            rgb = sc.nextLine().trim().split(" ");
+            rgb = sc.nextLine().trim().replace(",","").replace(";", " ").split(" ");
 
             try {
 

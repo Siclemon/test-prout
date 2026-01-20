@@ -2,15 +2,18 @@ package snake;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.Map;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 public class Skins {
-    static Gson gson = new Gson();
+    final static GsonBuilder builder = new GsonBuilder().setPrettyPrinting();
+    static Gson gson = builder.create();
 
     public Map<String,String[][]> getSkins(String item) {
         final String FILE = "src/snake/skins/" + item + ".json";
@@ -34,5 +37,17 @@ public class Skins {
         } catch (FileNotFoundException e) {}
 
         return gson.fromJson(reader, type);
+    }
+
+    public void newSkin(String type, String id, String[][] skin) {
+        final String FILE = "src/snake/skins/" + type + ".json";
+        Map<String,String[][]> list = getSkins(type);
+        list.put(id, skin);
+
+
+        try (FileWriter file = new FileWriter(FILE);) {
+            gson.toJson(list, file);
+        } catch (IOException e) {
+        }
     }
 }

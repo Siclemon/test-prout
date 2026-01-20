@@ -6,7 +6,6 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -303,7 +302,7 @@ class DeplacementAutomatique implements Runnable {
             mtn = LocalTime.now();
             duree = Duration.between(lastFrame, mtn).getSeconds()*1000+Duration.between(lastFrame, mtn).getNano()/1000000;
 
-            if (duree>=250-5*Game.serpent.size()) {
+            if (duree>=200-Game.serpent.size()) {
                 jsp.deplacement(Game.yLast, Game.xLast);
 
                 jsp.queueMangee();

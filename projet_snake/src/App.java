@@ -1,7 +1,6 @@
 import java.io.IOException;
 
 import snake.Game;
-import snake.HelloJLine;
 import snake.Joueur;
 import snake.Login;
 import snake.Menu;
@@ -17,7 +16,7 @@ public class App {
 
         System.out.print("\033\143");
 
-        hjl.main(args);
+        //hjl.main(args);
 
         player = Login.login();
 
