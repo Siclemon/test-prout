@@ -1,18 +1,23 @@
 import java.io.IOException;
 
 import snake.Game;
+import snake.HelloJLine;
 import snake.Joueur;
 import snake.Login;
 import snake.Menu;
 import snake.Save;
+import snake.menutest;
 
 public class App {
     public static void main(String[] args) throws IOException {
         Joueur player;
         Game jeu = new Game();
         boolean boucle = true;
+        menutest hjl = new menutest();
 
         System.out.print("\033\143");
+
+        hjl.main(args);
 
         player = Login.login();
 
@@ -21,6 +26,7 @@ public class App {
             switch (Menu.menu(player.getPseudo())) {
                 case "jouer":
                     jeu.main(player);
+                    Save.prout(player);
                     break;
 
                 case "quitter":
@@ -34,7 +40,7 @@ public class App {
 
         } while (boucle);
         
-        Save.prout(player);
+        //Save.prout(player);
         
         System.out.print("\033[E");
        
