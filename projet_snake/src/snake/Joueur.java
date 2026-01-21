@@ -39,8 +39,8 @@ public class Joueur {
 
         public Skins() {
             this.fruit = "red";
-            this.head = "blue";
-            this.body = "red";
+            this.head = "yellow";
+            this.body = "yellow";
             this.back = "green";
         }
 

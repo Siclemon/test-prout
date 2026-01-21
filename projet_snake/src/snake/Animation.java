@@ -41,8 +41,8 @@ public class Animation {
             couleurFondUn = skinslist.getBackAnimation().get(j.skins.back)[0];
             couleurFondDeux = skinslist.getBackAnimation().get(j.skins.back)[1];
         } else {
-            couleurTete = skinslist.getSkinsAnimation("head").get("blue");
-            couleurCorps = skinslist.getSkinsAnimation("body").get("blue");
+            couleurTete = skinslist.getSkinsAnimation("head").get("yellow");
+            couleurCorps = skinslist.getSkinsAnimation("body").get("yellow");
             couleurFruit = skinslist.getSkinsAnimation("fruit").get("red");
             couleurFondUn = skinslist.getBackAnimation().get("green")[0];
             couleurFondDeux = skinslist.getBackAnimation().get("green")[1];

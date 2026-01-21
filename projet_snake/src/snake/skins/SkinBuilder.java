@@ -32,6 +32,7 @@ public class SkinBuilder {
             System.out.println("Combien de couleurs ?");
             nbCouleurs = sc.nextInt();
             sc.nextLine();
+
             for (int i = 1; i <= nbCouleurs; i++) {
                 couleurs.put(i, couleur(i));
             }
@@ -40,15 +41,6 @@ public class SkinBuilder {
 
 
         System.out.print("\033\143");
-        //grille grise
-        // for (int y = 0; y < 4; y++) {
-        //     for (int x = 0; x < 8; x++) {
-        //         if (x % 2 == 0)
-        //             System.out.print("\033[38;2;120;120;120m\033[48;2;150;150;150m" + "\033[" + (y + 1) + ";" + (x + 1) + "H▀" + "\033[m");
-        //         else
-        //             System.out.print("\033[48;2;120;120;120m\033[38;2;150;150;150m" + "\033[" + (y + 1) + ";" + (x + 1) + "H▀" + "\033[m");
-        //     }
-        // }
 
         for (int y = 0; y < 8; y++) {
             for (int x = 0; x < 8; x++) {
@@ -75,15 +67,17 @@ public class SkinBuilder {
                 System.out.print(temp[y/2][x] + "\033[" + (y/2 + 1) + ";" + (x + 1) + "H▀" + "\033[m");
             }
         }
-
+        sc.nextLine();
         try { Thread.sleep(1500);}
         catch (InterruptedException e){}
 
-        sc.nextLine();
+        String clrAnim = couleur();
+        
         System.out.println("Quel nom ?");
         String nom = sc.nextLine();
 
         skins.newSkin(quoi, nom, skin);
+        skins.newSkinAnimation(quoi, nom, clrAnim);
 
         sc.close();
     }
@@ -142,9 +136,46 @@ public class SkinBuilder {
         return result;
     }
 
+    //pour le fond
+    static String couleur() {
+        String[] rgb;
+        boolean ok;
+        do {
+            ok = false;
+            System.out.print("\n\nCouleur pour l'animation : ");
+            rgb = sc.nextLine().trim().replace(",","").replace(";", " ").split(" ");
+
+            try {
+
+                for (String elem : rgb) {
+                    if (Integer.parseInt(elem) < 0 || Integer.parseInt(elem) > 255) {
+                        System.out.println("entre 0 et 255 stp");
+                        ok = false;
+                        break;
+                    } else
+                        ok = true;
+                }
+
+            } catch (NumberFormatException e) {
+                System.out.println("des chiffres stp");
+            }
+
+            if (rgb.length!=3) System.out.println("3 couleurs stp");
+
+        } while (!ok || rgb.length!=3);
+
+        String result = "\033[38;2;" + rgb[0] + ";" + rgb[1] + ";" + rgb[2] + "m";
+        System.out.println("\033[48;2;"+result+"     "+"\033[m");
+        return result;
+    }
+
     static void afficherCouleurs(HashMap<Integer,String> couleurs, int nb) {
         for (int i = 1; i <= nb; i++) {
-            System.out.print("\033[" + i + ";10H" + "\033[48;2;" + couleurs.get(i) + "  " + "\033[m\033[38;2;" + couleurs.get(i) + "-Couleur " + i + "\033[ù");
+            String[] rgb = couleurs.get(i).substring(0, couleurs.get(i).length()-1).split(";");
+            String fondClair = "";
+            if (Integer.parseInt(rgb[0]) + Integer.parseInt(rgb[1]) + Integer.parseInt(rgb[2]) < 100)
+                fondClair = "\033[48;2;245;245;230m";
+            System.out.print("\033[" + i + ";10H" + "\033[48;2;" + couleurs.get(i) + "  " + "\033[m\033[38;2;" +  couleurs.get(i) +fondClair + "-Couleur " + i + "  (" + "\033[49m\033[38;2;220;0;0m" + rgb[0] + "\033[38;2;0;220;0m " + rgb[1] + "\033[38;2;0;0;220m " + rgb[2] + "\033[m\033[38;2;" +  couleurs.get(i) + ")\033[m");
         }
     }
 }
