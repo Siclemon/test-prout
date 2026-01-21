@@ -145,20 +145,8 @@ public class Game {
         
         //AFFICHAGE INITIAL
         System.out.print("\033\143");
-        // System.out.print("\033[?25l"); //cache le curseur
-        // for (int y = 0; y < dimensions*4; y++) {
-        //     for (int x = 0; x < dimensions*8; x++) {
-        //         String galvaran = " ";
-        //         if (y%8<4 && x%16<8 || y%8>3 && x%16>7) galvaran = couleurFondUn+galvaran;
-        //         else galvaran = couleurFondDeux+galvaran;
-        //         System.out.print("\033["+(y+1)+";"+(x+1)+"H"+galvaran);
-        //     }
-        // }
-        // afficher("tete", yTete, xTete);
-        // afficher("pomme", yPomme, xPomme);
-        // System.out.print("\033[?25h"); //montre le curseur
-
         Display.cadre(1, 1, 42, 84,"\033[48;2;100;250;100m");
+        Display.gameInfo(player);
         System.out.print("\033[20;85H");
 
         service.submit(deplacementAuto);

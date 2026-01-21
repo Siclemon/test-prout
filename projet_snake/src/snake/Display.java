@@ -39,4 +39,23 @@ public class Display {
             }
         }
     }
+
+    public static void gameInfo(Joueur player) {
+        System.out.print("\033[1;90H"+player.getPseudo());
+        System.out.print("\033[3;90H"+"Meilleur score : "+player.getHighScore());
+        
+        int y = 18;
+        int x = 97;
+
+        System.out.print("\033["+y+";"+x+"H"+ "▄▄▄");
+        System.out.print("\033["+(y+1)+";"+(x-1)+"H"+ "█   █");
+        System.out.print("\033["+(y+2)+";"+(x-1)+"H"+ "▀▄▄▄▀");
+
+        System.out.print("\033["+(y-1)+";"+(x+1)+"H"+ "z");
+        System.out.print("\033["+(y-2)+";"+(x+1)+"H"+ "↑");
+        System.out.print("\033["+(y+1)+";"+(x-5)+"H"+ "← q ");
+        System.out.print("\033["+(y+1)+";"+(x+4)+"H"+ " d →");
+        System.out.print("\033["+(y+3)+";"+(x+1)+"H"+ "s");
+        System.out.print("\033["+(y+4)+";"+(x+1)+"H"+ "↓");
+    }
 }
