@@ -5,24 +5,20 @@ import snake.Joueur;
 import snake.Login;
 import snake.Menu;
 import snake.Save;
-import snake.menutest;
 
 public class App {
     public static void main(String[] args) throws IOException {
         Joueur player;
         Game jeu = new Game();
         boolean boucle = true;
-        menutest hjl = new menutest();
 
         System.out.print("\033\143");
-
-        //hjl.main(args);
 
         player = Login.login();
 
         do {
 
-            switch (Menu.menu(player.getPseudo())) {
+            switch (Menu.menu(player)) {
                 case "jouer":
                     jeu.main(player);
                     Save.prout(player);

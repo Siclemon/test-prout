@@ -77,7 +77,7 @@ public class Save {
         newSave = true;
 
         Joueur player = new Joueur(pseudo);
-        Joueur.Skins skins = new Joueur.Skins();
+        //Joueur.Skins skins = new Joueur.Skins();
         
         return player;
     }

@@ -20,6 +20,7 @@ public class Display {
         System.out.print("\033[11;9H\033[3m"+nom+reset);
         System.out.print("\033[12;9H\033[3mse \033[4mD\033[24méconnecter"+reset);
         System.out.print("\033["+y+++";"+x+"H\033[1;4mJ"+"\033[1;24mOUER"+reset);
+        System.out.print("\033["+y+++";"+x+"H\033[1;4mC"+"\033[1;24mOSMÉTIQUES"+reset);
         System.out.print("\033["+y+++";"+x+"H\033[1;4mO"+"\033[1;24mPTIONS"+reset);
         System.out.print("\033["+y+++";"+x+"H\033[1;4mQ"+"\033[1;24mUITTER"+reset);
         System.out.print("\033["+(y+1)+";"+x+"H>");

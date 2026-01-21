@@ -32,14 +32,14 @@ public class Joueur {
     }
 
     public static class Skins {
-        private String fruit;
+        String fruit;
         String head;
         String body;
         String back;
 
         public Skins() {
             this.fruit = "red";
-            this.head = "red";
+            this.head = "blue";
             this.body = "red";
             this.back = "green";
         }

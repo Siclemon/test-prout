@@ -11,8 +11,9 @@ public class Animation {
     static boolean stop = false;
     static int yMinc, xMinc, hauteurc, largeurc;
     static String positionCurseur;
+    static String couleurTete, couleurCorps, couleurFruit, couleurFondUn, couleurFondDeux;
 
-    public static void anim(int yMin, int xMin, int hauteur, int largeur, String posCurseur) {
+    public static void anim(Joueur player, int yMin, int xMin, int hauteur, int largeur, String posCurseur) {
         yMinc = yMin;
         xMinc = xMin;
         hauteurc = hauteur;
@@ -20,12 +21,32 @@ public class Animation {
         positionCurseur = posCurseur;
         Thread thread = new Thread(new DeplacementAnim());
         stop = false;
+        
+        initialisationCouleurs(player);
 
         System.out.print(positionCurseur);
         System.out.print("\033[s");
         
         initialisation();
         thread.start();
+
+    }
+
+    public static void initialisationCouleurs(Joueur j) {
+        Skins skinslist = new Skins();
+        if (j != null) {
+            couleurTete = skinslist.getSkinsAnimation("head").get(j.skins.head);
+            couleurCorps = skinslist.getSkinsAnimation("body").get(j.skins.body);
+            couleurFruit = skinslist.getSkinsAnimation("fruit").get(j.skins.fruit);
+            couleurFondUn = skinslist.getBackAnimation().get(j.skins.back)[0];
+            couleurFondDeux = skinslist.getBackAnimation().get(j.skins.back)[1];
+        } else {
+            couleurTete = skinslist.getSkinsAnimation("head").get("blue");
+            couleurCorps = skinslist.getSkinsAnimation("body").get("blue");
+            couleurFruit = skinslist.getSkinsAnimation("fruit").get("red");
+            couleurFondUn = skinslist.getBackAnimation().get("green")[0];
+            couleurFondDeux = skinslist.getBackAnimation().get("green")[1];
+        }
 
     }
 
@@ -41,9 +62,8 @@ public class Animation {
         ySerpent.add(yMinc+hauteurc);
         xSerpent.add(xMinc+2*largeurc);
         System.out.print("\033[u");
-        afficher("\033[38;2;250;220;0m",ySerpent.get(0),xSerpent.get(0), true);
+        afficher(couleurTete,ySerpent.get(0),xSerpent.get(0), true);
 
-        
 
     }
 
@@ -54,7 +74,7 @@ public class Animation {
 
         if(new Random().nextInt(8) != 0) {
 
-            afficher("\033[38;2;250;220;0m", (int)ySerpent.get(ySerpent.size()-1), xSerpent.get(xSerpent.size()-1), false);
+            afficher(couleurTete, (int)ySerpent.get(ySerpent.size()-1), xSerpent.get(xSerpent.size()-1), false);
 
             ySerpent.remove(ySerpent.size()-1);
             xSerpent.remove(xSerpent.size()-1);
@@ -62,9 +82,9 @@ public class Animation {
 
         
         for (int i=1; i<ySerpent.size();i++) {
-            afficher("\033[38;2;200;160;0m", ySerpent.get(i), xSerpent.get(i), true);
+            afficher(couleurCorps, ySerpent.get(i), xSerpent.get(i), true);
         }
-        afficher("\033[38;2;250;220;0m", ySerpent.get(0), xSerpent.get(0), true);
+        afficher(couleurTete, ySerpent.get(0), xSerpent.get(0), true);
 
     }
 
@@ -84,7 +104,6 @@ public class Animation {
                 break;
             case 3:
                 check(0, -4);
-
                 break;
         }
     }
@@ -108,8 +127,8 @@ public class Animation {
         String fond;
         String[] forme;
 
-        if (yTruc%4<2 && xTruc%8<4 || yTruc%4>1 && xTruc%8>3) fond = "\033[48;2;47;138;40m";
-        else fond = "\033[48;2;34;112;28m";
+        if (yTruc%4<2 && xTruc%8<4 || yTruc%4>1 && xTruc%8>3) fond = couleurFondUn;
+        else fond = couleurFondDeux;
 
         if (truc) forme = new String[] {"▄▄","▀▀"};
         else forme = new String[] {"  ","  "};
@@ -129,7 +148,6 @@ public class Animation {
         int yMax = yMin + 2*hauteur;
         int xMax = xMin + 4*largeur;
         int yy = 0, xx = 0;
-        String couleurFondUn = "\033[48;2;47;138;40m",couleurFondDeux = "\033[48;2;34;112;28m";
 
         for (int y = yMin; y<yMax; y++) {
             for (int x = xMin; x<xMax; x++) {
@@ -160,7 +178,7 @@ class DeplacementAnim implements Runnable {
 
         while (!Animation.stop) { 
             mtn = LocalTime.now();
-            duree = Duration.between(lastFrame, mtn).getSeconds()*1000+Duration.between(lastFrame, mtn).getNano()/1000000;
+            duree=Duration.between(lastFrame, mtn).toMillis();
 
             if (duree>=200) {
                 moved = false;

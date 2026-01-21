@@ -56,7 +56,7 @@ public class Game {
     }
 
     public void main(Joueur player) throws IOException {
-        Game sss = new Game();
+        //Game sss = new Game();
         
         ExecutorService service = Executors.newCachedThreadPool();
         exec = Executors.newSingleThreadExecutor();
@@ -67,7 +67,7 @@ public class Game {
         // String quelFuit = player.skins.getFruit();
         // String[][] fruit = skinsFruit.get(quelFuit);
 
-        choses.put("pomme", skinsList.getSkins("fruit").get(player.skins.getFruit()));
+        choses.put("pomme", skinsList.getSkins("fruit").get(player.skins.fruit));
         choses.put("tete", skinsList.getSkins("head").get(player.skins.head));
         choses.put("corps", skinsList.getSkins("body").get(player.skins.body));
         //choses.put("fond", skinsList.getSkins("back").get(player.skins.back));
@@ -234,7 +234,6 @@ public class Game {
                 break;
             }
         }
-
     }
 
     public void pommeMangee() {
@@ -300,7 +299,7 @@ class DeplacementAutomatique implements Runnable {
 
         while (!Game.perdu) { 
             mtn = LocalTime.now();
-            duree = Duration.between(lastFrame, mtn).getSeconds()*1000+Duration.between(lastFrame, mtn).getNano()/1000000;
+            duree=Duration.between(lastFrame, mtn).toMillis();
 
             if (duree>=200-Game.serpent.size()) {
                 jsp.deplacement(Game.yLast, Game.xLast);

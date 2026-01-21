@@ -4,6 +4,7 @@ snake/DeplacementAutomatique.class
 snake/Skins$2.class
 snake/menutest.class
 snake/Login.class
+snake/Skins$3.class
 snake/HelloJLine.class
 snake/Display.class
 snake/Menu.class
@@ -27,3 +28,4 @@ snake/InputSnake.class
 GlobalMouseListenerExample.class
 snake/Joueur.class
 jnook.class
+snake/Skins$4.class

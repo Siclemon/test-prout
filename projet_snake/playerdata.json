@@ -2,8 +2,44 @@
   {
     "pseudo": "Siclemon",
     "money": 0,
-    "highScore": 15,
+    "highScore": 26,
     "games": [
+      {
+        "score": 10,
+        "date": "21/01/2026 - 13:56:53"
+      },
+      {
+        "score": 5,
+        "date": "21/01/2026 - 13:55:43"
+      },
+      {
+        "score": 5,
+        "date": "21/01/2026 - 13:31:47"
+      },
+      {
+        "score": 4,
+        "date": "21/01/2026 - 13:31:20"
+      },
+      {
+        "score": 11,
+        "date": "21/01/2026 - 13:30:20"
+      },
+      {
+        "score": 26,
+        "date": "21/01/2026 - 09:18:01"
+      },
+      {
+        "score": 1,
+        "date": "21/01/2026 - 09:17:18"
+      },
+      {
+        "score": 7,
+        "date": "21/01/2026 - 08:06:44"
+      },
+      {
+        "score": 4,
+        "date": "21/01/2026 - 08:05:54"
+      },
       {
         "score": 15,
         "date": "20/01/2026 - 22:08:01"
@@ -49,10 +85,43 @@
     }
   },
   {
+    "pseudo": "fgvb",
+    "money": 0,
+    "highScore": 9,
+    "games": [
+      {
+        "score": 9,
+        "date": "21/01/2026 - 09:20:32"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "red",
+      "body": "red",
+      "back": "green"
+    }
+  },
+  {
     "pseudo": "j",
     "money": 0,
     "highScore": 66,
     "games": [
+      {
+        "score": 5,
+        "date": "21/01/2026 - 09:20:07"
+      },
+      {
+        "score": 6,
+        "date": "21/01/2026 - 08:12:56"
+      },
+      {
+        "score": 8,
+        "date": "21/01/2026 - 08:08:14"
+      },
+      {
+        "score": 4,
+        "date": "21/01/2026 - 08:07:28"
+      },
       {
         "score": 5,
         "date": "20/01/2026 - 22:04:34"
@@ -207,9 +276,9 @@
       }
     ],
     "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
+      "fruit": "pokeball",
+      "head": "ekans",
+      "body": "ekans",
       "back": "green"
     }
   },

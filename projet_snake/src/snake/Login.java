@@ -31,7 +31,7 @@ public class Login {
         Display.afficherTitre(3,8);
         Display.texteLogin(hauteurBlocCentral+2,38);
         Display.cadre(hauteurBlocCentral, 35, 6, 16,"\033[48;2;34;112;28m");
-        Animation.anim(27,5,6,18,posCurseur);
+        Animation.anim(null, 27,5,6,18,posCurseur);
 
         //System.out.print("\033[16;40H");
     }

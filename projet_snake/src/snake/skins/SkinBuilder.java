@@ -142,7 +142,7 @@ public class SkinBuilder {
         return result;
     }
 
-    static void afficherCouleurs(HashMap couleurs, int nb) {
+    static void afficherCouleurs(HashMap<Integer,String> couleurs, int nb) {
         for (int i = 1; i <= nb; i++) {
             System.out.print("\033[" + i + ";10H" + "\033[48;2;" + couleurs.get(i) + "  " + "\033[m\033[38;2;" + couleurs.get(i) + "-Couleur " + i + "\033[ù");
         }
