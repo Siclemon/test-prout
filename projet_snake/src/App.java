@@ -8,13 +8,14 @@ import snake.Save;
 
 public class App {
     public static void main(String[] args) throws IOException {
-        Joueur player;
+        Joueur player = null;
         Game jeu = new Game();
         boolean boucle = true;
 
         System.out.print("\033\143");
 
-        player = Login.login();
+        while (player == null)
+            player = Login.login();
 
         do {
 

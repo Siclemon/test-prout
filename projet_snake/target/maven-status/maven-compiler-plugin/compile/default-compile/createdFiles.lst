@@ -3,6 +3,7 @@ snake/skins/FruitSkin.class
 snake/skins/HeadSkin.class
 App.class
 snake/DeplacementAutomatique.class
+snake/ScoreList.class
 snake/Skins$2.class
 snake/menutest.class
 snake/Login.class
@@ -24,6 +25,7 @@ snake/Save$1.class
 snake/LocalDateTimeAdapter.class
 snake/Skins.class
 snake/menutest$Button.class
+snake/ScoreList$1.class
 snake/Animation.class
 snake/Skins$1.class
 snake/skins/SkinBuilder.class

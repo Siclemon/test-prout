@@ -22,12 +22,22 @@ public class Joueur {
     }
 
     public static class Partie {
-        int score;
-        LocalDateTime date;
+        final int score;
+        final LocalDateTime date;
+        final String pseudo;
 
-        public Partie(int score, LocalDateTime date) {
+        public Partie(int score, LocalDateTime date, String pseudo) {
             this.score = score;
             this.date = date;
+            this.pseudo = pseudo;
+        }
+
+        public int getScore() {
+            return score;
+        }
+
+        public LocalDateTime getDate(){
+            return date;
         }
     }
 
@@ -73,5 +83,7 @@ public class Joueur {
         return pseudo;
     }
 
-
+    public List<Joueur.Partie> getGames() {
+        return games;
+    }
 }

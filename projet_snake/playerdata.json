@@ -1,261 +1,79 @@
 [
   {
-    "pseudo": "j",
+    "pseudo": "Siclemon",
     "money": 0,
-    "highScore": 66,
+    "highScore": 8,
     "games": [
       {
-        "score": 25,
-        "date": "22/01/2026 - 10:16:58"
-      },
-      {
         "score": 1,
-        "date": "22/01/2026 - 10:14:45"
+        "date": "23/01/2026 - 11:58:08",
+        "pseudo": "Siclemon"
       },
       {
         "score": 3,
-        "date": "22/01/2026 - 08:17:22"
-      },
-      {
-        "score": 2,
-        "date": "22/01/2026 - 08:12:52"
-      },
-      {
-        "score": 8,
-        "date": "21/01/2026 - 22:02:09"
-      },
-      {
-        "score": 7,
-        "date": "21/01/2026 - 22:02:09"
-      },
-      {
-        "score": 2,
-        "date": "21/01/2026 - 21:59:36"
-      },
-      {
-        "score": 2,
-        "date": "21/01/2026 - 21:59:22"
-      },
-      {
-        "score": 22,
-        "date": "21/01/2026 - 21:58:11"
-      },
-      {
-        "score": 21,
-        "date": "21/01/2026 - 21:58:11"
-      },
-      {
-        "score": 20,
-        "date": "21/01/2026 - 21:58:11"
-      },
-      {
-        "score": 13,
-        "date": "21/01/2026 - 21:50:56"
-      },
-      {
-        "score": 2,
-        "date": "21/01/2026 - 20:41:15"
-      },
-      {
-        "score": 4,
-        "date": "21/01/2026 - 15:53:57"
-      },
-      {
-        "score": 5,
-        "date": "21/01/2026 - 09:20:07"
-      },
-      {
-        "score": 6,
-        "date": "21/01/2026 - 08:12:56"
-      },
-      {
-        "score": 8,
-        "date": "21/01/2026 - 08:08:14"
-      },
-      {
-        "score": 4,
-        "date": "21/01/2026 - 08:07:28"
-      },
-      {
-        "score": 5,
-        "date": "20/01/2026 - 22:04:34"
-      },
-      {
-        "score": 5,
-        "date": "20/01/2026 - 22:02:33"
+        "date": "23/01/2026 - 11:55:52",
+        "pseudo": "Siclemon"
       },
       {
         "score": 1,
-        "date": "20/01/2026 - 22:01:10"
-      },
-      {
-        "score": 2,
-        "date": "20/01/2026 - 20:54:23"
-      },
-      {
-        "score": 2,
-        "date": "20/01/2026 - 09:06:13"
-      },
-      {
-        "score": 6,
-        "date": "20/01/2026 - 08:52:40"
-      },
-      {
-        "score": 16,
-        "date": "20/01/2026 - 08:46:03"
-      },
-      {
-        "score": 9,
-        "date": "20/01/2026 - 08:44:00"
-      },
-      {
-        "score": 5,
-        "date": "20/01/2026 - 08:43:03"
-      },
-      {
-        "score": 18,
-        "date": "20/01/2026 - 08:37:07"
-      },
-      {
-        "score": 14,
-        "date": "20/01/2026 - 08:30:44"
-      },
-      {
-        "score": 27,
-        "date": "20/01/2026 - 08:26:22"
-      },
-      {
-        "score": 35,
-        "date": "20/01/2026 - 08:23:31"
-      },
-      {
-        "score": 5,
-        "date": "20/01/2026 - 08:23:25"
-      },
-      {
-        "score": 5,
-        "date": "20/01/2026 - 08:23:19"
-      },
-      {
-        "score": 66,
-        "date": "20/01/2026 - 08:19:57"
-      },
-      {
-        "score": 41,
-        "date": "20/01/2026 - 08:19:21"
-      },
-      {
-        "score": 42,
-        "date": "20/01/2026 - 08:18:14"
-      },
-      {
-        "score": 24,
-        "date": "20/01/2026 - 08:17:37"
-      },
-      {
-        "score": 0,
-        "date": "19/01/2026 - 23:03:16"
-      },
-      {
-        "score": 15,
-        "date": "19/01/2026 - 21:45:40"
-      },
-      {
-        "score": 32,
-        "date": "19/01/2026 - 21:44:20"
-      },
-      {
-        "score": 31,
-        "date": "19/01/2026 - 21:43:24"
+        "date": "23/01/2026 - 11:37:28",
+        "pseudo": "Siclemon"
       },
       {
         "score": 7,
-        "date": "19/01/2026 - 21:40:35"
-      },
-      {
-        "score": 7,
-        "date": "19/01/2026 - 16:01:30"
-      },
-      {
-        "score": 13,
-        "date": "19/01/2026 - 16:00:58"
-      },
-      {
-        "score": 40,
-        "date": "19/01/2026 - 15:58:18"
-      },
-      {
-        "score": 17,
-        "date": "19/01/2026 - 15:56:27"
-      },
-      {
-        "score": 27,
-        "date": "19/01/2026 - 15:56:05"
-      },
-      {
-        "score": 47,
-        "date": "19/01/2026 - 15:55:14"
-      },
-      {
-        "score": 10,
-        "date": "19/01/2026 - 15:55:06"
-      },
-      {
-        "score": 19,
-        "date": "19/01/2026 - 15:54:51"
-      },
-      {
-        "score": 30,
-        "date": "19/01/2026 - 15:54:28"
-      },
-      {
-        "score": 26,
-        "date": "19/01/2026 - 15:53:26"
-      },
-      {
-        "score": 7,
-        "date": "19/01/2026 - 15:45:42"
-      },
-      {
-        "score": 7,
-        "date": "19/01/2026 - 15:41:04"
-      },
-      {
-        "score": 7,
-        "date": "19/01/2026 - 15:29:44"
+        "date": "23/01/2026 - 11:36:25",
+        "pseudo": "Siclemon"
       },
       {
         "score": 1,
-        "date": "18/01/2026 - 17:25:49"
+        "date": "23/01/2026 - 11:28:03",
+        "pseudo": "Siclemon"
+      },
+      {
+        "score": 8,
+        "date": "23/01/2026 - 10:59:51",
+        "pseudo": "Siclemon"
+      },
+      {
+        "score": 3,
+        "date": "23/01/2026 - 10:57:51",
+        "pseudo": "Siclemon"
       }
     ],
     "skins": {
-      "fruit": "pokeball",
-      "head": "ekans",
-      "body": "ekans",
+      "fruit": "red",
+      "head": "yellow",
+      "body": "yellow",
       "back": "green"
     }
   },
   {
-    "pseudo": "ekrebs",
+    "pseudo": "Siclem�on",
     "money": 0,
-    "highScore": 7,
+    "highScore": 1,
     "games": [
       {
         "score": 1,
-        "date": "22/01/2026 - 09:12:50"
-      },
+        "date": "23/01/2026 - 11:37:05",
+        "pseudo": "Siclem�on"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "yellow",
+      "body": "yellow",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "money": 0,
+    "highScore": 3,
+    "games": [
       {
-        "score": 7,
-        "date": "22/01/2026 - 09:11:43"
-      },
-      {
-        "score": 6,
-        "date": "22/01/2026 - 09:11:43"
-      },
-      {
-        "score": 1,
-        "date": "22/01/2026 - 09:11:16"
+        "score": 3,
+        "date": "23/01/2026 - 11:25:09",
+        "pseudo": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
       }
     ],
     "skins": {
@@ -268,668 +86,18 @@
   {
     "pseudo": "Nucleon",
     "money": 0,
-    "highScore": 23,
+    "highScore": 16,
     "games": [
-      {
-        "score": 8,
-        "date": "22/01/2026 - 08:18:39"
-      },
-      {
-        "score": 1,
-        "date": "22/01/2026 - 08:18:18"
-      },
-      {
-        "score": 1,
-        "date": "22/01/2026 - 08:17:55"
-      },
-      {
-        "score": 23,
-        "date": "19/01/2026 - 12:12:39"
-      },
-      {
-        "score": 17,
-        "date": "19/01/2026 - 08:17:51"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "Siclemon",
-    "money": 0,
-    "highScore": 31,
-    "games": [
-      {
-        "score": 23,
-        "date": "22/01/2026 - 08:14:02"
-      },
-      {
-        "score": 31,
-        "date": "21/01/2026 - 21:41:09"
-      },
-      {
-        "score": 11,
-        "date": "21/01/2026 - 20:49:36"
-      },
-      {
-        "score": 8,
-        "date": "21/01/2026 - 20:30:25"
-      },
-      {
-        "score": 10,
-        "date": "21/01/2026 - 13:56:53"
-      },
-      {
-        "score": 5,
-        "date": "21/01/2026 - 13:55:43"
-      },
-      {
-        "score": 5,
-        "date": "21/01/2026 - 13:31:47"
-      },
-      {
-        "score": 4,
-        "date": "21/01/2026 - 13:31:20"
-      },
-      {
-        "score": 11,
-        "date": "21/01/2026 - 13:30:20"
-      },
-      {
-        "score": 26,
-        "date": "21/01/2026 - 09:18:01"
-      },
-      {
-        "score": 1,
-        "date": "21/01/2026 - 09:17:18"
-      },
-      {
-        "score": 7,
-        "date": "21/01/2026 - 08:06:44"
-      },
-      {
-        "score": 4,
-        "date": "21/01/2026 - 08:05:54"
-      },
-      {
-        "score": 15,
-        "date": "20/01/2026 - 22:08:01"
-      },
-      {
-        "score": 2,
-        "date": "20/01/2026 - 22:07:40"
-      },
-      {
-        "score": 12,
-        "date": "20/01/2026 - 21:59:02"
-      },
-      {
-        "score": 7,
-        "date": "20/01/2026 - 21:58:13"
-      },
-      {
-        "score": 4,
-        "date": "20/01/2026 - 21:03:26"
-      },
-      {
-        "score": 9,
-        "date": "20/01/2026 - 20:49:19"
-      },
-      {
-        "score": 4,
-        "date": "20/01/2026 - 11:10:47"
-      },
-      {
-        "score": 7,
-        "date": "18/01/2026 - 16:45:39"
-      },
-      {
-        "score": 3,
-        "date": "17/01/2026 - 13:14:11"
-      }
-    ],
-    "skins": {
-      "fruit": "pokeball",
-      "head": "blue",
-      "body": "blue",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "h",
-    "money": 0,
-    "highScore": 24,
-    "games": [
-      {
-        "score": 1,
-        "date": "22/01/2026 - 08:13:04"
-      },
       {
         "score": 16,
-        "date": "22/01/2026 - 08:11:44"
-      },
-      {
-        "score": 24,
-        "date": "21/01/2026 - 21:57:09"
+        "date": "23/01/2026 - 11:06:31",
+        "pseudo": "Nucleon"
       }
     ],
     "skins": {
       "fruit": "red",
       "head": "yellow",
       "body": "yellow",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "dxvioc",
-    "money": 0,
-    "highScore": 3,
-    "games": [
-      {
-        "score": 3,
-        "date": "21/01/2026 - 20:41:41"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "yellow",
-      "body": "yellow",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "wpsqc",
-    "money": 0,
-    "highScore": 10,
-    "games": [
-      {
-        "score": 10,
-        "date": "21/01/2026 - 20:31:16"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "yellow",
-      "body": "yellow",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "movwsi\u003cuvhjsdiwovjfgijsdg",
-    "money": 0,
-    "highScore": 9,
-    "games": [
-      {
-        "score": 9,
-        "date": "21/01/2026 - 15:45:53"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "yellow",
-      "body": "yellow",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "fgvb",
-    "money": 0,
-    "highScore": 9,
-    "games": [
-      {
-        "score": 9,
-        "date": "21/01/2026 - 09:20:32"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "Siclemmon",
-    "money": 0,
-    "highScore": 4,
-    "games": [
-      {
-        "score": 4,
-        "date": "20/01/2026 - 20:47:13"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "nlnlnl",
-    "money": 0,
-    "highScore": 2,
-    "games": [
-      {
-        "score": 2,
-        "date": "20/01/2026 - 11:11:10"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "nlnlnl",
-    "money": 0,
-    "highScore": 2,
-    "games": [
-      {
-        "score": 2,
-        "date": "20/01/2026 - 11:11:10"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "j",
-    "money": 0,
-    "highScore": 66,
-    "games": [
-      {
-        "score": 2,
-        "date": "20/01/2026 - 09:06:13"
-      },
-      {
-        "score": 6,
-        "date": "20/01/2026 - 08:52:40"
-      },
-      {
-        "score": 16,
-        "date": "20/01/2026 - 08:46:03"
-      },
-      {
-        "score": 9,
-        "date": "20/01/2026 - 08:44:00"
-      },
-      {
-        "score": 5,
-        "date": "20/01/2026 - 08:43:03"
-      },
-      {
-        "score": 18,
-        "date": "20/01/2026 - 08:37:07"
-      },
-      {
-        "score": 14,
-        "date": "20/01/2026 - 08:30:44"
-      },
-      {
-        "score": 27,
-        "date": "20/01/2026 - 08:26:22"
-      },
-      {
-        "score": 35,
-        "date": "20/01/2026 - 08:23:31"
-      },
-      {
-        "score": 5,
-        "date": "20/01/2026 - 08:23:25"
-      },
-      {
-        "score": 5,
-        "date": "20/01/2026 - 08:23:19"
-      },
-      {
-        "score": 66,
-        "date": "20/01/2026 - 08:19:57"
-      },
-      {
-        "score": 41,
-        "date": "20/01/2026 - 08:19:21"
-      },
-      {
-        "score": 42,
-        "date": "20/01/2026 - 08:18:14"
-      },
-      {
-        "score": 24,
-        "date": "20/01/2026 - 08:17:37"
-      },
-      {
-        "score": 0,
-        "date": "19/01/2026 - 23:03:16"
-      },
-      {
-        "score": 15,
-        "date": "19/01/2026 - 21:45:40"
-      },
-      {
-        "score": 32,
-        "date": "19/01/2026 - 21:44:20"
-      },
-      {
-        "score": 31,
-        "date": "19/01/2026 - 21:43:24"
-      },
-      {
-        "score": 7,
-        "date": "19/01/2026 - 21:40:35"
-      },
-      {
-        "score": 7,
-        "date": "19/01/2026 - 16:01:30"
-      },
-      {
-        "score": 13,
-        "date": "19/01/2026 - 16:00:58"
-      },
-      {
-        "score": 40,
-        "date": "19/01/2026 - 15:58:18"
-      },
-      {
-        "score": 17,
-        "date": "19/01/2026 - 15:56:27"
-      },
-      {
-        "score": 27,
-        "date": "19/01/2026 - 15:56:05"
-      },
-      {
-        "score": 47,
-        "date": "19/01/2026 - 15:55:14"
-      },
-      {
-        "score": 10,
-        "date": "19/01/2026 - 15:55:06"
-      },
-      {
-        "score": 19,
-        "date": "19/01/2026 - 15:54:51"
-      },
-      {
-        "score": 30,
-        "date": "19/01/2026 - 15:54:28"
-      },
-      {
-        "score": 26,
-        "date": "19/01/2026 - 15:53:26"
-      },
-      {
-        "score": 7,
-        "date": "19/01/2026 - 15:45:42"
-      },
-      {
-        "score": 7,
-        "date": "19/01/2026 - 15:41:04"
-      },
-      {
-        "score": 7,
-        "date": "19/01/2026 - 15:29:44"
-      },
-      {
-        "score": 1,
-        "date": "18/01/2026 - 17:25:49"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "jj",
-    "money": 0,
-    "highScore": 63,
-    "games": [
-      {
-        "score": 63,
-        "date": "20/01/2026 - 08:24:12"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "q",
-    "money": 0,
-    "highScore": 0,
-    "games": [],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "fesse",
-    "money": 0,
-    "highScore": 24,
-    "games": [
-      {
-        "score": 24,
-        "date": "19/01/2026 - 20:34:00"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "",
-    "money": 0,
-    "highScore": 7,
-    "games": [
-      {
-        "score": 7,
-        "date": "19/01/2026 - 15:46:46"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "sqdio",
-    "money": 0,
-    "highScore": 7,
-    "games": [
-      {
-        "score": 7,
-        "date": "19/01/2026 - 15:04:14"
-      },
-      {
-        "score": 7,
-        "date": "19/01/2026 - 15:03:11"
-      },
-      {
-        "score": 7,
-        "date": "19/01/2026 - 15:03:02"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "fsd",
-    "money": 0,
-    "highScore": 1,
-    "games": [
-      {
-        "score": 1,
-        "date": "19/01/2026 - 14:26:28"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "ek",
-    "money": 0,
-    "highScore": 3,
-    "games": [
-      {
-        "score": 3,
-        "date": "19/01/2026 - 12:16:06"
-      },
-      {
-        "score": 3,
-        "date": "19/01/2026 - 12:15:52"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "io\u003coikqsj",
-    "money": 0,
-    "highScore": 0,
-    "games": [],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "caaca",
-    "money": 0,
-    "highScore": 0,
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "azeze",
-    "money": 0,
-    "highScore": 0,
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "aaa",
-    "money": 0,
-    "highScore": 0,
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "aze",
-    "money": 0,
-    "highScore": 0,
-    "games": [],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "Climcloum",
-    "money": 0,
-    "highScore": 0,
-    "games": [
-      {
-        "score": 17,
-        "date": "17/01/2026 - 23:30:05"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "test",
-    "money": 0,
-    "highScore": 2,
-    "games": [
-      {
-        "score": 2,
-        "date": "18/01/2026 - 17:25:31"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "f",
-    "money": 0,
-    "highScore": 0,
-    "games": [],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
-      "back": "green"
-    }
-  },
-  {
-    "pseudo": "aaaaaaaaaaa",
-    "money": 0,
-    "highScore": 0,
-    "games": [],
-    "skins": {
-      "fruit": "red",
-      "head": "red",
-      "body": "red",
       "back": "green"
     }
   }

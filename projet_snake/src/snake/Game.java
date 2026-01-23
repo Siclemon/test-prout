@@ -170,7 +170,7 @@ public class Game {
         System.out.print("\033[41;1H");
         System.out.println("perdu lol");
 
-        player.games.add(0,new Joueur.Partie(serpent.size(), date));
+        player.games.add(0,new Joueur.Partie(serpent.size(), date, player.getPseudo()));
         if (serpent.size()>player.getHighScore()) player.setHighScore(serpent.size());
 
         try {
