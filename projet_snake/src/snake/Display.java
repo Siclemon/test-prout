@@ -1,11 +1,5 @@
 package snake;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-
 public class Display {
     static String reset = "\033[0m";
 
@@ -38,6 +32,19 @@ public class Display {
         System.out.print("\033[11;62H\033[3;38;2;250;250;120mby siclemon"+reset);
         System.out.print("\033["+y+";"+x+"HPseudo :");
         System.out.print("\033["+(y+1)+";"+x+"H>");
+    }
+
+    public static void texteHistorique(int y, int x) {
+        System.out.print("\033["+y+";"+x+"H\033[4;1mHISTORIQUE"+reset);
+        y+=3;
+        
+
+        String[] lignes = {"Retour", "Suivant", "Précédent"};
+        lignes = menuCreator(lignes, false);
+        for (int i=0; i<lignes.length; i++) {
+            System.out.print("\033[" + (y+i) + ";" + x + "H" + lignes[i] + reset);
+        }
+        System.out.print("\033["+(y+lignes.length+1)+";"+x+"H>");
     }
 
     public static void cadre(int y, int x, int hauteur, int largeur, String couleur) {
@@ -75,15 +82,19 @@ public class Display {
             if (majuscules) options[i] = options[i].toUpperCase();
 
             for (int j=0; j<options[i].length(); j++) {
-                if (lettresUtilisees[i] != options[i].charAt(j)) {
+                boolean presente = false;
+                for (int k=0; k<lettresUtilisees.length; k++) {
+                    if (lettresUtilisees[k] == options[i].charAt(j)) presente = true;  
+                }
+
+                if (!presente) {
                     lettresUtilisees[i] = options[i].charAt(j);
-                    options[i] = "\033[1;4m" + lettresUtilisees[i] + "\033[24m" + options[i].substring(1);
+                    options[i] = options[i].substring(0,j) + "\033[1;4m" + lettresUtilisees[i] + "\033[24m" + options[i].substring(j+1);
 
                     break;
                 }
             }
         }
-
         return options;
     }
 
