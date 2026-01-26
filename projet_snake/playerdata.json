@@ -2,8 +2,58 @@
   {
     "pseudo": "Siclemon",
     "money": 0,
-    "highScore": 11,
+    "highScore": 30,
     "games": [
+      {
+        "score": 7,
+        "date": "26/01/2026 - 10:45:45",
+        "pseudo": "Siclemon"
+      },
+      {
+        "score": 10,
+        "date": "26/01/2026 - 10:44:27",
+        "pseudo": "Siclemon"
+      },
+      {
+        "score": 30,
+        "date": "26/01/2026 - 10:39:19",
+        "pseudo": "Siclemon"
+      },
+      {
+        "score": 21,
+        "date": "26/01/2026 - 10:37:41",
+        "pseudo": "Siclemon"
+      },
+      {
+        "score": 22,
+        "date": "26/01/2026 - 10:35:59",
+        "pseudo": "Siclemon"
+      },
+      {
+        "score": 15,
+        "date": "26/01/2026 - 10:35:09",
+        "pseudo": "Siclemon"
+      },
+      {
+        "score": 8,
+        "date": "26/01/2026 - 10:20:58",
+        "pseudo": "Siclemon"
+      },
+      {
+        "score": 23,
+        "date": "26/01/2026 - 10:16:56",
+        "pseudo": "Siclemon"
+      },
+      {
+        "score": 18,
+        "date": "26/01/2026 - 10:12:38",
+        "pseudo": "Siclemon"
+      },
+      {
+        "score": 23,
+        "date": "26/01/2026 - 08:05:27",
+        "pseudo": "Siclemon"
+      },
       {
         "score": 11,
         "date": "24/01/2026 - 19:07:37",
@@ -48,6 +98,65 @@
         "score": 3,
         "date": "23/01/2026 - 10:57:51",
         "pseudo": "Siclemon"
+      }
+    ],
+    "skins": {
+      "fruit": "pokeball",
+      "head": "ekans",
+      "body": "ekans",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "ekrebs",
+    "money": 0,
+    "highScore": 6,
+    "games": [
+      {
+        "score": 6,
+        "date": "26/01/2026 - 10:25:29",
+        "pseudo": "ekrebs"
+      },
+      {
+        "score": 1,
+        "date": "26/01/2026 - 10:23:50",
+        "pseudo": "ekkrebs"
+      }
+    ],
+    "skins": {
+      "fruit": "pokeball",
+      "head": "blue",
+      "body": "blue",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "dsgfdfg",
+    "money": 0,
+    "highScore": 1,
+    "games": [
+      {
+        "score": 1,
+        "date": "26/01/2026 - 10:23:07",
+        "pseudo": "dsgfdfg"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "yellow",
+      "body": "yellow",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "dfgdf",
+    "money": 0,
+    "highScore": 3,
+    "games": [
+      {
+        "score": 3,
+        "date": "26/01/2026 - 10:22:46",
+        "pseudo": "dfgdf"
       }
     ],
     "skins": {

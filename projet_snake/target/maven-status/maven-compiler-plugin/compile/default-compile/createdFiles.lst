@@ -31,6 +31,7 @@ snake/Skins$1.class
 snake/skins/SkinBuilder.class
 snake/pixels.class
 snake/Game$1.class
+snake/Historique.class
 snake/InputSnake.class
 snake/skins/BackSkin.class
 GlobalMouseListenerExample.class

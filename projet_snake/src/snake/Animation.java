@@ -47,7 +47,6 @@ public class Animation {
             couleurFondUn = skinslist.getBackAnimation().get("green")[0];
             couleurFondDeux = skinslist.getBackAnimation().get("green")[1];
         }
-
     }
 
     public static void initialisation() {

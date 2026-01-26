@@ -25,11 +25,13 @@ public class Display {
     public static void texteMenu(int y, int x, String nom) {
         System.out.print("\033[11;9H\033[3m"+nom+reset);
         System.out.print("\033[12;9H\033[3mse \033[4mD\033[24méconnecter"+reset);
-        System.out.print("\033["+y+++";"+x+"H\033[1;4mJ"+"\033[1;24mOUER"+reset);
-        System.out.print("\033["+y+++";"+x+"H\033[1;4mC"+"\033[1;24mOSMÉTIQUES"+reset);
-        System.out.print("\033["+y+++";"+x+"H\033[1;4mO"+"\033[1;24mPTIONS"+reset);
-        System.out.print("\033["+y+++";"+x+"H\033[1;4mQ"+"\033[1;24mUITTER"+reset);
-        System.out.print("\033["+(y+1)+";"+x+"H>");
+
+        String[] lignes = {"Jouer", "Cosmétiques", "Boutique", "Historique", "Quitter"};
+        lignes = menuCreator(lignes, true);
+        for (int i=0; i<lignes.length; i++) {
+            System.out.print("\033[" + (y+i) + ";" + x + "H" + lignes[i] + reset);
+        }
+        System.out.print("\033["+(y+lignes.length+1)+";"+x+"H>");
     }
 
     public static void texteLogin(int y, int x) {
@@ -63,5 +65,33 @@ public class Display {
         System.out.print("\033["+(y+1)+";"+(x+4)+"H"+ " d →");
         System.out.print("\033["+(y+3)+";"+(x+1)+"H"+ "s");
         System.out.print("\033["+(y+4)+";"+(x+1)+"H"+ "↓");
+    }
+
+    public static String[] menuCreator(String[] options, boolean majuscules) {
+        char[] lettresUtilisees = new char[options.length];
+
+        for (int i=0; i<options.length; i++) {
+
+            if (majuscules) options[i] = options[i].toUpperCase();
+
+            for (int j=0; j<options[i].length(); j++) {
+                if (lettresUtilisees[i] != options[i].charAt(j)) {
+                    lettresUtilisees[i] = options[i].charAt(j);
+                    options[i] = "\033[1;4m" + lettresUtilisees[i] + "\033[24m" + options[i].substring(1);
+
+                    break;
+                }
+            }
+        }
+
+        return options;
+    }
+
+    public static void effacer(int yMin, int yMax, int xMin, int xMax) {
+        for (int i=yMin; i<=yMax; i++) {
+            for (int j=xMin; j<=xMax; j++) {
+                System.out.print("\033["+i+";"+j+"H ");
+            }
+        }
     }
 }

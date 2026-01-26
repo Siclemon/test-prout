@@ -68,10 +68,10 @@ public class ScoreList {
         }
     }
 
-    public static void historique(Joueur player, int y, int x) {
+    public static void historique(Joueur player, int y, int x, int lignes) {
         if (player.games != null) {
             List<Joueur.Partie> games = triParDate(player.games);
-            affHistorique(games, y, x, 5);
+            affHistorique(games, y, x, lignes);
         }
     }
 
@@ -79,7 +79,7 @@ public class ScoreList {
 
         System.out.print("\033["+y+++";"+x+"H");
         System.out.print("\033[48;2;30;60;30;1m");
-        System.out.print(" Score -    Date    ");
+        System.out.print(" Score -       Date        ");
         System.out.print("\033[m");
 
         nbLignes = Math.min(nbLignes,liste.size());
@@ -94,7 +94,7 @@ public class ScoreList {
                 System.out.print("\033[48;2;15;30;15m");
             else
                 System.out.print("\033[48;2;20;40;20m");
-            System.out.printf("  %3d  - %td/%tm/%tY ",score,date,date,date);
+            System.out.printf("  %3d  -  %td/%tm/%tY %tH:%tM ",score,date,date,date,date,date);
             System.out.print("\033[m");
         }
     }
