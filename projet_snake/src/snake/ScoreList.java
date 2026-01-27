@@ -15,14 +15,14 @@ public class ScoreList {
             affListeObjets(triParScore(getGamesList()),y,x,5);
     }
 
-    public static List triParScore(List liste) {
+    public static List<Joueur.Partie> triParScore(List<Joueur.Partie> liste) {
         Comparator<Joueur.Partie> tri = Comparator.comparing(Joueur.Partie::getScore);
         liste.sort(tri);
         Collections.reverse(liste);
         return liste;
     }
 
-    public static List triParDate(List liste) {
+    public static List<Joueur.Partie> triParDate(List<Joueur.Partie> liste) {
         Comparator<Joueur.Partie> tri = Comparator.comparing(Joueur.Partie::getDate);
         liste.sort(tri);
         Collections.reverse(liste);
@@ -68,11 +68,16 @@ public class ScoreList {
         }
     }
 
-    public static void historique(Joueur player, int y, int x, int lignes) {
-        if (player.games != null) {
+    public static void historique(Joueur player, int y, int x, int lignes, int page) {
+        if (!player.games.isEmpty()) {
             List<Joueur.Partie> games = triParDate(player.games);
+            games = games.subList(20*page, games.size());
             affHistorique(games, y, x, lignes);
         }
+    }
+
+    public static int nombrePagesHisto(Joueur player, int nbLignes) {
+        return player.games.size()/nbLignes;
     }
 
     public static void affHistorique(List<Joueur.Partie> liste, int y, int x, int nbLignes) {

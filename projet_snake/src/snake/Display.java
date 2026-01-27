@@ -16,6 +16,14 @@ public class Display {
         System.out.print("\033[" + y++ + ";" + x + "H" + " ░░░░░░░░░  ░░░░░    ░░░░░ ░░░░░   ░░░░░ ░░░░░   ░░░░ ░░░░░░░░░░ "+reset);
     }
 
+    public static void afficherHistorique(int y, int x) {
+        System.out.print("\033[38;2;34;112;28m");
+        System.out.print("\033["+(y++)+";"+x+"H" + "╻ ╻╻┏━┓╺┳╸┏━┓┏━┓╻┏━┓╻ ╻┏━╸");
+        System.out.print("\033["+(y++)+";"+x+"H" + "┣━┫┃┗━┓ ┃ ┃ ┃┣┳┛┃┃┓┃┃ ┃┣╸ ");
+        System.out.print("\033["+(y++)+";"+x+"H" + "╹ ╹╹┗━┛ ╹ ┗━┛╹┗╸╹┗┻┛┗━┛┗━╸");
+        System.out.print("\033[m");
+    }
+
     public static void texteMenu(int y, int x, String nom) {
         System.out.print("\033[11;9H\033[3m"+nom+reset);
         System.out.print("\033[12;9H\033[3mse \033[4mD\033[24méconnecter"+reset);
@@ -35,8 +43,8 @@ public class Display {
     }
 
     public static void texteHistorique(int y, int x) {
-        System.out.print("\033["+y+";"+x+"H\033[4;1mHISTORIQUE"+reset);
-        y+=3;
+        // System.out.print("\033["+y+";"+x+"H\033[4;1mHISTORIQUE"+reset);
+        // y+=3;
         
 
         String[] lignes = {"Retour", "Suivant", "Précédent"};

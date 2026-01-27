@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -28,12 +29,13 @@ public class Save {
 
         if (newSave) players.add(0,player);
         else {
-            for (Joueur elem : players) {
-                if (player.getPseudo().equals(elem.getPseudo())) {
-                    players.remove(elem);
-                    break;
+            Iterator<Joueur> iter = players.iterator();
+            while (iter.hasNext()) {
+                if (iter.next().getPseudo().equals(player.getPseudo())) {
+                    iter.remove();
                 }
             }
+            
             players.add(0,player);
         }
         
