@@ -50,7 +50,7 @@ class BodySkin extends ItemSkin {
         this.type = type;
     }
 
-    public ArrayList<String[][]> getSkin(){
+    public ArrayList<String[][]> getSkin() {
         return this.skin;
     }
 

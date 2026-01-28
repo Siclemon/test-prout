@@ -1,8 +1,18 @@
-public class Snake {
-    List<Segment> segments;
+package snake.game;
 
-    public Snake() {
-        positions
+import java.util.List;
+
+//import snake.game.Position;
+
+public class Snake {
+    private List<Segment> segments;
+
+    public Snake(int yHead, int xHead) {
+        segments.add(new Segment(new Position(yHead, xHead), Direction.UP));
+    }
+
+    public List<Segment> getSegments() {
+        return segments;
     }
 
     public class Segment{
@@ -11,22 +21,43 @@ public class Snake {
 
         public Segment(Position pos, Direction dir) {
             this.pos = pos;
-            tis.dir = dir;
+            this.dir = dir;
         }
 
-        public class Position{
-            int y;
-            int x;
+        public Position getPosition() {
+            return pos;
         }
-
-        public class Direction{
-
+        public Direction getDirection() {
+            return dir;
         }
 
     }
 
-    public class Position{
-        int y;
-        int x;
+    public enum Direction {
+        UP(-1,0),
+        DOWN(1,0),
+        LEFT(0,-1),
+        RIGHT(0,1);
+
+        private final int dy, dx;
+
+        private Direction(int dy, int dx) {
+            this.dy = dy;
+            this.dx = dx;
+        }
+
+        public int getDy() {
+            return dy;
+        }
+        public int GetDx() {
+            return dx;
+        }
+    }
+
+    public void move(Direction dir) {
+        Segment head = segments.get(0);
+        Position newPos = new Position(head.pos.getY()+dir.getDy(), head.pos.getX()+dir.GetDx());
+        Segment newHead = new Segment(newPos, dir);
+        segments.add(0,newHead);
     }
 }
