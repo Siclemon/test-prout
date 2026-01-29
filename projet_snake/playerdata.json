@@ -1,27 +1,14 @@
 [
   {
-    "pseudo": "j",
-    "money": 0,
-    "highScore": 20,
-    "games": [
-      {
-        "score": 20,
-        "date": "27/01/2026 - 10:11:09",
-        "pseudo": "j"
-      }
-    ],
-    "skins": {
-      "fruit": "red",
-      "head": "yellow",
-      "body": "yellow",
-      "back": "green"
-    }
-  },
-  {
     "pseudo": "Siclemon",
     "money": 0,
     "highScore": 35,
     "games": [
+      {
+        "score": 6,
+        "date": "28/01/2026 - 09:27:41",
+        "pseudo": "Siclemon"
+      },
       {
         "score": 1,
         "date": "27/01/2026 - 10:08:05",
@@ -162,6 +149,24 @@
       "fruit": "pokeball",
       "head": "blue",
       "body": "blue",
+      "back": "green"
+    }
+  },
+  {
+    "pseudo": "j",
+    "money": 0,
+    "highScore": 20,
+    "games": [
+      {
+        "score": 20,
+        "date": "27/01/2026 - 10:11:09",
+        "pseudo": "j"
+      }
+    ],
+    "skins": {
+      "fruit": "red",
+      "head": "yellow",
+      "body": "yellow",
       "back": "green"
     }
   },

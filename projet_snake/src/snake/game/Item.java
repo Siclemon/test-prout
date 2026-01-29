@@ -1,35 +1,44 @@
 package snake.game;
 
-import java.util.Random;
-
 public class Item {
-    private Position pos;
+    protected Position pos;
     protected int value;
+    protected String type;
 
-    public Item() {
-        
+    public Item(Map map) {
+        pos = new Position(map);
     }
 
-    public void newItem(Snake snake) {
-
-        while (true) {
-            Position position = new Position();
-
-            int count = 0;
-            for (Snake.Segment seg : snake.getSegments())
-                if (!position.equals(seg.getPosition()))
-                    count++;
-
-            if (count==snake.getSegments().size())
-                break;
-        }
-
+    public Position getPosition(){
+        return pos;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    // public void newItem(Snake snake) {
+
+    //     while (true) {
+    //         Position position = new Position();
+
+    //         int count = 0;
+    //         for (Snake.Segment seg : snake.getSegments())
+    //             if (!position.equals(seg.getPosition()))
+    //                 count++;
+
+    //         if (count==snake.getSegments().size())
+    //             break;
+    //     }
+
+    // }
 }
 
-public class Fruit extends Item {
+class Fruit extends Item {
     
-    public Fruit() {
+    public Fruit(Map map) {
+        super(map);
         value = 1;
+        type = "fruit";
     }
 }

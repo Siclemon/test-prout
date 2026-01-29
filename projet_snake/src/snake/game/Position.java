@@ -10,10 +10,14 @@ public class Position{
             this.x = x;
         }
 
-        public Position() {
+        public Position(Map map) {
             Random rng = new Random();
-            this.y = rng.nextInt(10);
-            this.x = rng.nextInt(10);
+            while (true) {
+                this.y = rng.nextInt(map.getHEIGHT());
+                this.x = rng.nextInt(map.getWIDTH());
+                if (map.getMap()[y][x].equals(""))
+                    return;
+            }
         }
 
         public int getY() {

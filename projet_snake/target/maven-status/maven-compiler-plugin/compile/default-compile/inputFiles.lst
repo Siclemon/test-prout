@@ -17,7 +17,9 @@
 /mnt/c/Users/sjeckert/code/test-prout/projet_snake/src/snake/ScoreList.java
 /mnt/c/Users/sjeckert/code/test-prout/projet_snake/src/snake/Skins.java
 /mnt/c/Users/sjeckert/code/test-prout/projet_snake/src/snake/TestJson.java
-/mnt/c/Users/sjeckert/code/test-prout/projet_snake/src/snake/game/Fruit.java
+/mnt/c/Users/sjeckert/code/test-prout/projet_snake/src/snake/game/Game.java
+/mnt/c/Users/sjeckert/code/test-prout/projet_snake/src/snake/game/Item.java
+/mnt/c/Users/sjeckert/code/test-prout/projet_snake/src/snake/game/Map.java
 /mnt/c/Users/sjeckert/code/test-prout/projet_snake/src/snake/game/Position.java
 /mnt/c/Users/sjeckert/code/test-prout/projet_snake/src/snake/game/Snake.java
 /mnt/c/Users/sjeckert/code/test-prout/projet_snake/src/snake/menutest.java

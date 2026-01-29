@@ -1,4 +1,5 @@
 snake/Joueur$Partie.class
+Map.class
 snake/skins/FruitSkin.class
 snake/skins/HeadSkin.class
 App.class
@@ -7,6 +8,7 @@ snake/ScoreList.class
 snake/Skins$2.class
 snake/menutest.class
 snake/Login.class
+snake/game/Item.class
 snake/Skins$3.class
 snake/HelloJLine.class
 snake/skins/Skin.class
@@ -18,6 +20,7 @@ snake/Game.class
 snake/DeplacementAnim.class
 snake/game/Position.class
 snake/skins/ItemSkin.class
+snake/game/Game.class
 snake/game/Snake.class
 snake/TestJson.class
 snake/Save.class

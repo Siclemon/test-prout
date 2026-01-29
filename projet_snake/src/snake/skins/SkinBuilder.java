@@ -37,7 +37,7 @@ public class SkinBuilder {
                 couleurs.put(i, couleur(i));
             }
             System.out.println("couleurs ok ?");
-        }while (!sc.nextLine().toLowerCase().matches("o|oui|ok|y|yes|1"));
+        }while (!sc.nextLine().trim().toLowerCase().matches("o|oui|ok|y|yes|1"));
 
 
         System.out.print("\033\143");

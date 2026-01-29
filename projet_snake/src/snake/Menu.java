@@ -43,8 +43,7 @@ public class Menu {
                             histo.historique(player);
                             affichage(player);
                     }
-                } catch (IOException e) {}
-                catch (StringIndexOutOfBoundsException e) {}
+                } catch (IOException | StringIndexOutOfBoundsException e) {}
             }
             
         }
