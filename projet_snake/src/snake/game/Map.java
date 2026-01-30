@@ -1,5 +1,6 @@
 package snake.game;
 
+import java.util.HashMap;
 import java.util.List;
 
 import snake.game.Snake.Direction;
@@ -72,13 +73,18 @@ public class Map {
         map[y][x] = it.getType();
     }
 
-    public void updateDisplay() {
+    public void updateDisplay(HashMap<K,V> skins) {
 
         for (int y=0; y<displayMap.length; y++) {
             for (int x=0; x<displayMap[y].length; x++) {
-                
+                String char = "▀";
+                if (map[y/4][x/8].length()==1)
             }
         }
+    }
+
+    public void updateDisplay(HashMap skins) {
+        
     }
     
 }
