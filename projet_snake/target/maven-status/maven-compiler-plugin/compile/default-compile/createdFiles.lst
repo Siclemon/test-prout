@@ -1,5 +1,4 @@
 snake/Joueur$Partie.class
-Map.class
 snake/skins/FruitSkin.class
 snake/skins/HeadSkin.class
 App.class
@@ -16,6 +15,7 @@ snake/Display.class
 snake/skins/BodySkin.class
 snake/Menu.class
 snake/Input.class
+snake/game/Map.class
 snake/Game.class
 snake/DeplacementAnim.class
 snake/game/Position.class
