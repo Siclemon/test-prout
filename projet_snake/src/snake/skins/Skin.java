@@ -39,23 +39,41 @@ class HeadSkin extends ItemSkin {
 }
 
 class BodySkin extends ItemSkin {
-    private String type;
     private ArrayList<String[][]> skin;
+    private boolean hasNeck;
+    private String[][] neck;
+    private boolean hasTail;
+    private String[][] tail;
 
-    BodySkin(String id, String name, String animCol, ArrayList<String[][]> skin, String type) {
+    BodySkin(String id, String name, String animCol, ArrayList<String[][]> skin, String[][] neck, String[][] tail) {
         this.id = id;
         this.name = name;
         this.animationColor = animCol;
         this.skin = skin;
-        this.type = type;
+        this.neck = neck;
+        this.hasNeck = neck!=null;
+        this.tail = tail;
+        this.hasTail = tail!=null;
     }
 
     public ArrayList<String[][]> getSkin() {
         return this.skin;
     }
 
-    public String getType(){
-        return this.type;
+    public boolean getHasNeck() {
+        return hasNeck;
+    }
+
+    public boolean getHasTail() {
+        return hasTail
+    }
+
+    public String[][] getNeck() {
+        return neck;
+    }
+
+    public String[][] getTail() {
+        return tail;
     }
 }
 

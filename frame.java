@@ -13,7 +13,7 @@ public class frame extends JFrame {
     public frame() {
         setTitle("a");
         setSize(500,300);
-        setResizable(true);
+        setResizable(false);
         //setLayout(null);
 
         JButton bouton = new JButton("prout");
