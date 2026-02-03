@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import snake.Joueur;
+
 public class Skins {
     private String backgroundOne;
     private String backgroundTwo;
@@ -10,6 +12,10 @@ public class Skins {
     private String[][] neck;
     private boolean hasTail;
     private String[][] tail;
+
+    public Skins(Joueur.Skins skinsIDs) {
+        backgroundOne = 
+    }
 
     
 }

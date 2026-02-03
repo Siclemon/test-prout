@@ -11,6 +11,7 @@ public class Map {
     private String[][] map;
     private String[][] displayMap;
     private Direction[][] direcs;
+    private Skins skins;
 
     public Map(int height, int width) {
         HEIGHT = height;
