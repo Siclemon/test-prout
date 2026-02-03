@@ -18,13 +18,13 @@ public class test {
         //     }
         // }
 
-        for (int r =0; r<256 ; r+=5) {
+        for (int r =0; r<256 ; r+=50) {
             for (int g =0; g<256 ; g+=5) {
                 for (int b =0; b<256 ; b+=5) {
                     a= rng.nextInt(256);
                     c= rng.nextInt(256);
                     d= rng.nextInt(256);
-                    System.out.print("\033[38;2;"+r+";"+g+";"+b+"m██"+reset);
+                    System.out.print("\033[38;2;255;255;0m"+"\033[48;2;"+b+";"+g+";"+r+"m@W"+reset);
                 }
                 System.out.print(" ");
                 // for (int b =0; b<256 ; b+=10) {
