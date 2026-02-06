@@ -19,6 +19,9 @@ public class ColorGuess {
 
     }
 
+    /**
+     * affiche
+     */
     private static void display(int[] color) {
         System.out.print("\033\143");
         for (int i = 0; i<9; i++) {
