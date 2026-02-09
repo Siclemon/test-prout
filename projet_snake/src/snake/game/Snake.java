@@ -1,5 +1,6 @@
 package snake.game;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //import snake.game.Position;
@@ -8,6 +9,7 @@ public class Snake {
     private List<Segment> segments;
 
     public Snake(int yHead, int xHead) {
+        segments = new ArrayList<>();
         segments.add(new Segment(new Position(yHead, xHead), Direction.UP));
     }
 
