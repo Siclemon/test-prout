@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class Serveur {
 
@@ -34,24 +35,38 @@ class Polichombr extends Thread {
     Socket socket;
     PrintWriter out;
     BufferedReader in;
+    ArrayList<Polichombr> liste = new ArrayList<>();
 
     public Polichombr(Socket socket, PrintWriter out, BufferedReader in) {
         this.socket = socket;
         this.out = out;
         this.in = in;
+        liste.add(this);
     }
 
     @Override
     public void run() {
-        while (true)
+        out.println("bvn");
+        String msg;
+        while (true) {
+            
             try {
-                in.readLine();
-                out.print("Mysdibule " + in);
+                msg = in.readLine();
+                System.out.println(in.readLine());
+                envoi(msg);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        
+
+        }
     }
 
+    void envoi(String msg) {
+        for (Polichombr usr : liste) {
+            usr.out.println(msg);
+        }
+    }
 
+    
 }
