@@ -60,6 +60,8 @@ body {
 h1 {
     font-size: 46px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 h2 {
@@ -80,5 +82,60 @@ ul {
 
 header {
     background-color: bisque;
-    padding: 1px;
+    padding: 10px 0 13px
+}
+
+nav {
+    background-color: rgb(236, 207, 171);
+    text-align: center;
+    padding : 4px 0px 4px;
+}
+
+.nav {
+    display: inline-block;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #ffefdc;
+    margin-right: 20px;
+    font-size: 17px;
+    padding: 2px 8px 3px 8px;
+    border-width: 3px;
+    border-color: rgb(206, 66, 41);
+    border-style:outset;
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    background-color: bisque;
+    padding: 15px 0 15px 3px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 15px;
+}
+
+table {
+    background-color: bisque;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 290px;
+    border: 3px tomato ;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th{
+    background-color: rgb(236, 207, 171);
+    color: rgb(206, 66, 41);
+}
+
+td, th {
+    border: solid tomato 2px;
+}
+
+main {
+    margin: 25px;
+    padding: 15px 15px 30px 15px;
+    border-radius: 15px;
+    background-color: rgb(255, 242, 227);
+    align-content: start;
 }
