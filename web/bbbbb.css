@@ -1,0 +1,23 @@
+fieldset {
+  background-color: #ccc;
+  border-radius: 12px;
+  margin: 10px;
+  border: 1px dotted black;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+label {
+  display: inline-block;
+  width: 150px;
+}
+
+.formu {
+  margin: 0px 0px 12px 0px;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+ 

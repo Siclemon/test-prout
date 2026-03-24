@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mon premier formulaire</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="pok.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h1>Formulaire d'inscription</h1>
+        <h2>Votre compte configuré en 2 minutes !</h2>
+    </header>
+    <hr>
+    <form action="./formulaire.html" method="get">
+        <fieldset>
+            <legend>État civil</legend>
+            <label for="nom">Nom :</label>
+            <input type="text" name="nom" id="nom" placeholder="nom"/>
+            <br>
+            <label for="prenom">Prénom :</label>
+            <input type="text" name="prenom" id="prenom" />
+            <br>
+            <label for="naissance">Date de naissance :</label>
+            <input type="date" name="naissance" id="naissance" />
+        </fieldset>
+        <fieldset>
+            <legend>Informations de contact</legend>
+            <label for="email">Adresse Email :</label>
+            <input type="email" name="email" id="email" placeholder="pipi.caca@prout.com">
+            <br>
+            <label for="tel">Téléphone :</label>
+            <input type="tel" name="tel" id="tel">
+        </fieldset>
+        <fieldset>
+            <div class="cgu">
+                <input type="checkbox" name="cgu" id="cgu">
+                J'accepte les
+                <a href="https://chat-jai-pete.fr/">conditions d'utilisation</a>
+            </div>
+            <div class="bouton">
+                <button type="submit">S'inscrire</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>
