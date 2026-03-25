@@ -31,14 +31,21 @@ h1, h2 {
     color: rgb(206, 66, 41);
 }
 
-button {
+.bout {
     background-color: rgb(206, 66, 41);
     border-radius: 10px;
     font-size: 19px;
-    border-color: black;
-    color : rgb(255, 242, 227);
+    color : rgb(255, 247, 237);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    padding: 7px;
+    padding: 4px 7px 7px;
+    border-width: 3px;
+    border-color: rgb(206, 66, 41);
+    border-style:outset;
+}
+
+.bout:hover {
+    background-color:rgb(163, 42, 20);
+    cursor: url("img/hover.png"), default;
 }
 
 .bouton {
@@ -55,19 +62,27 @@ body {
     background-color:rgb(255, 252, 249);
     margin: 0px;
     padding: 0px;
+    margin-top: 46px;
+    /* background-image: url("img/simple.png"); */
+}
+
+html, body {
+    cursor: url("img/32.png"), auto;
+    animation: cursor 5s linear infinite;
 }
 
 h1 {
     font-size: 46px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-top: 0;
+    margin-top: 3px;
     margin-bottom: 0;
 }
 
 h2 {
     font-size: 27px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
+    margin-top: 6px;
 }
 
 .cgu {
@@ -77,25 +92,40 @@ h2 {
 
 ul {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    list-style:disc;
+    list-style-image: url("img/8.png" ) ;
 }
 
 header {
     background-color: bisque;
-    padding: 10px 0 13px
+    padding: 10px 0 13px;
+    margin-bottom: 30px;
+    /* border-bottom: tomato 5px solid;
+    border-top: tomato 3px solid; */
 }
 
 nav {
     background-color: rgb(236, 207, 171);
     text-align: center;
-    padding : 4px 0px 4px;
+    padding : 0px 0px 0px;
+    border-bottom: rgb(206, 66, 41) solid 3px;
+    border-top: rgb(206, 66, 41) solid 3px;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 40px;
+    vertical-align: middle;
+    align-content: center;
+    white-space: nowrap;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
 }
 
 .nav {
     display: inline-block;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: #ffefdc;
-    margin-right: 20px;
+    margin: 0 7px 80px;
     font-size: 17px;
     padding: 2px 8px 3px 8px;
     border-width: 3px;
@@ -103,13 +133,21 @@ nav {
     border-style:outset;
     text-decoration: none;
     color: black;
+    border-radius: 15px;
+    cursor: url("img/hover.png"), default;
+}
+
+.nav:hover {
+    background-color: #e6d0b5;
+    
 }
 
 p {
     background-color: bisque;
-    padding: 15px 0 15px 3px;
+    padding: 15px 15px 15px 15px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border-radius: 15px;
+    text-align: justify;
 }
 
 table {
@@ -126,6 +164,7 @@ table {
 th{
     background-color: rgb(236, 207, 171);
     color: rgb(206, 66, 41);
+    font-size: 18px;
 }
 
 td, th {
@@ -138,4 +177,123 @@ main {
     border-radius: 15px;
     background-color: rgb(255, 242, 227);
     align-content: start;
+}
+
+.im {
+    background-image: url("img/img.jpg");
+    background-size:contain;
+    border-radius: 15px;
+    height: 334px;
+    width: 500px;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5) ;
+    }
+
+.im:hover {
+    /* border-radius: 300px; */
+    background-image: url("img/imgversiontomate.jpg");
+}
+
+.text {
+    /* flex: 1; */
+    /* min-width: 9%; */
+    margin-right: 30px;
+}
+
+/* .img {
+    flex: 1;
+} */
+
+.truc {
+   display:flex;
+   
+}
+
+td:hover {
+    margin-right: 10px;
+    font-size:22px;
+    font-weight: bold;
+}
+
+input:hover {
+    cursor: url("img/bouche.png"), default;
+}
+
+label:hover {
+    cursor: url("img/32.png"), default;
+}
+
+a:hover {
+    cursor: url("img/hover.png"), default;
+}
+
+.navimg {
+    /* align-self: self-end; */
+    height: 32px;
+    padding: 0 20px 0px 0;
+    /* margin-top: 8px; */
+    /* display: inline-block; */
+}
+
+.tom {
+    display: inline-block;
+    height: 27px;
+    margin-top: 4px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    padding-bottom: 4px;
+}
+
+.navimg:hover {
+    /* src: url("img/bouche.png"), default; */
+    src: local("img/bouche.png"), default;
+}
+
+.tomates {
+    flex: 1;
+    height: 32px;
+    width: 50%;
+    margin-top: 4px;
+    background-image: url("img/bg_tomato.png");
+}
+
+@keyframes cursor {
+    0% {
+        cursor: url("img/32.png"), auto;
+    }
+    90% {
+        cursor: url("img/32.png"), auto;
+    }
+    100% {
+        cursor: url("img/sourire.png"), auto;
+    }
+}
+
+.farwest {
+    background-image: url("img/old/128.png");
+    height: 128px;
+    width: 128px;
+    position: relative;
+    animation: farwest 10s linear 2;
+    animation-direction: normal;
+}
+
+@keyframes farwest {
+    0% {
+        left: -128px;
+        top: 50px;
+    }
+    30% {
+        left : 30%;
+        top: 150px;
+    }
+    /* 70% {
+        transform: rotate(1turn);
+        left: 100px;
+        top: 50px;
+    } */
+    100% {
+        transform: rotate(820deg);
+        left: 100%;
+        top: 50px;
+    }
 }
