@@ -277,23 +277,103 @@ a:hover {
     animation-direction: normal;
 }
 
+.bandeauanim {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 @keyframes farwest {
     0% {
         left: -128px;
-        top: 50px;
+        top: 0px;
     }
     30% {
         left : 30%;
-        top: 150px;
+        top: 0px;
     }
-    /* 70% {
-        transform: rotate(1turn);
-        left: 100px;
-        top: 50px;
-    } */
+    40% {
+        left: 40%;
+        top: -100px;
+    }
+    45% {
+        left: 45%;
+        top: -150px;
+    }
+    50% {
+        left: 50%;
+        top: -160px;
+    }
+    55% {
+        left: 55%;
+        top: -150px;
+    }
+    60% {
+        left: 60%;
+        top: -100px;
+    }
+    70% {
+        left: 70%;
+        top: 0px;
+    }
     100% {
         transform: rotate(820deg);
         left: 100%;
-        top: 50px;
+        top: 0px;
+    }
+}
+
+.farwestest {
+    background-image: url("img/old/128.png");
+    height: 128px;
+    width: 128px;
+    position: relative;
+    animation: farwestest 100s linear 2;
+    animation-direction: normal;
+}
+
+@keyframes farwestest {
+    0% {
+        transform: rotate(0deg);
+        left: -128px;
+        top: 0px;
+    }
+    90% {
+        transform: rotate(0deg);
+        left: -128px;
+        top: 0px;
+    }
+    93% {
+        left : 30%;
+        top: 0px;
+    }
+    94% {
+        left: 40%;
+        top: -100px;
+    }
+    94.5% {
+        left: 45%;
+        top: -150px;
+    }
+    95% {
+        left: 50%;
+        top: -160px;
+    }
+    95.5% {
+        left: 55%;
+        top: -150px;
+    }
+    96% {
+        left: 60%;
+        top: -100px;
+    }
+    97% {
+        left: 70%;
+        top: 0px;
+    }
+    100% {
+        transform: rotate(820deg);
+        left: 100%;
+        top: 0px;
     }
 }
