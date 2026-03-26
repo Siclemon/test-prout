@@ -92,7 +92,7 @@ h2 {
 
 ul {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    list-style-image: url("img/8.png" ) ;
+    list-style-image: url("img/cerise.png" ) ;
 }
 
 header {
@@ -196,7 +196,7 @@ main {
 .text {
     /* flex: 1; */
     /* min-width: 9%; */
-    margin-right: 30px;
+    /* margin-right: 30px; */
 }
 
 /* .img {
@@ -205,7 +205,9 @@ main {
 
 .truc {
    display:flex;
-   
+   justify-content: space-between;
+   align-items: flex-end;
+   align-content: flex-start;
 }
 
 td:hover {
@@ -268,112 +270,164 @@ a:hover {
     }
 }
 
-.farwest {
-    background-image: url("img/old/128.png");
+.farwestest {
+    background-image: url("img/128.png");
     height: 128px;
     width: 128px;
     position: relative;
-    animation: farwest 10s linear 2;
+    animation: farwestest 20s linear infinite;
     animation-direction: normal;
 }
 
 .bandeauanim {
     position: fixed;
     bottom: 0;
-    width: 100%;
-}
-
-@keyframes farwest {
-    0% {
-        left: -128px;
-        top: 0px;
-    }
-    30% {
-        left : 30%;
-        top: 0px;
-    }
-    40% {
-        left: 40%;
-        top: -100px;
-    }
-    45% {
-        left: 45%;
-        top: -150px;
-    }
-    50% {
-        left: 50%;
-        top: -160px;
-    }
-    55% {
-        left: 55%;
-        top: -150px;
-    }
-    60% {
-        left: 60%;
-        top: -100px;
-    }
-    70% {
-        left: 70%;
-        top: 0px;
-    }
-    100% {
-        transform: rotate(820deg);
-        left: 100%;
-        top: 0px;
-    }
-}
-
-.farwestest {
-    background-image: url("img/old/128.png");
-    height: 128px;
-    width: 128px;
-    position: relative;
-    animation: farwestest 100s linear 2;
-    animation-direction: normal;
+    left: -128px;
+    width: 106.66%;
 }
 
 @keyframes farwestest {
     0% {
-        transform: rotate(0deg);
-        left: -128px;
+        left: 0%;
+        top: 5px;
+    }
+
+    6.67% {
+        left: 6.67%;
+        top: 5px;
+    }
+
+    17.86% {
+        left: 17.86%;
         top: 0px;
+        background-image: url("img/128.png");
     }
-    90% {
-        transform: rotate(0deg);
-        left: -128px;
-        top: 0px;
+
+    28.13% {
+        left: 28.13%;
+        top: 12px;
+        background-image: url("img/outch.png");
     }
-    93% {
-        left : 30%;
-        top: 0px;
+
+    39.33% {
+        left: 39.33%;
+        top: -5px;
+        background-image: url("img/128.png");
     }
-    94% {
-        left: 40%;
-        top: -100px;
+
+    49.59% {
+        left: 49.59%;
+        top: 12px;
     }
-    94.5% {
-        left: 45%;
-        top: -150px;
+
+    60.80% {
+        left: 60.80%;
+        top: -4px;
+        background-image: url("img/128.png");
     }
-    95% {
-        left: 50%;
-        top: -160px;
+
+    71.06% {
+        left: 71.06%;
+        top: 13px;
+        background-image: url("img/outch.png");
     }
-    95.5% {
-        left: 55%;
-        top: -150px;
+
+    82.27% {
+        left: 82.27%;
+        top: -5px;
+        background-image: url("img/128.png");
     }
-    96% {
-        left: 60%;
-        top: -100px;
+
+    92.53% {
+        left: 92.53%;
+        top: 12px;
     }
-    97% {
-        left: 70%;
-        top: 0px;
-    }
+
     100% {
-        transform: rotate(820deg);
+        transform: rotate(840deg);
         left: 100%;
         top: 0px;
+        background-image: url("img/128.png");
+    }
+}
+
+.farwest {
+    background-image: url("img/128.png");
+    height: 128px;
+    width: 128px;
+    position: relative;
+    animation: farwest 100s linear infinite;
+    animation-direction: normal;
+}
+
+@keyframes farwest {
+    0% {
+        transform: rotate(0deg);
+        left: 0%;
+        top: 5px;
+    }
+
+    90% {
+        left: 0%;
+        top: 5px;
+        transform: rotate(0deg);
+    }
+
+    90.67% {
+        left: 6.67%;
+        top: 5px;
+    }
+
+    91.79% {
+        left: 17.86%;
+        top: 0px;
+        background-image: url("img/128.png");
+    }
+
+    92.81% {
+        left: 28.13%;
+        top: 12px;
+        background-image: url("img/outch.png");
+    }
+
+    93.93% {
+        left: 39.33%;
+        top: -5px;
+        background-image: url("img/128.png");
+    }
+
+    94.96% {
+        left: 49.59%;
+        top: 12px;
+    }
+
+    96.08% {
+        left: 60.80%;
+        top: -4px;
+        background-image: url("img/128.png");
+    }
+
+    97.11% {
+        left: 71.06%;
+        top: 13px;
+        background-image: url("img/outch.png");
+    }
+
+    98.23% {
+        left: 82.27%;
+        top: -5px;
+        background-image: url("img/128.png");
+    }
+
+    99.25% {
+        left: 92.53%;
+        top: 12px;
+    }
+
+    100% {
+        transform: rotate(840deg);
+        left: 100%;
+        top: 0px;
+        background-image: url("img/128.png");
     }
 }
